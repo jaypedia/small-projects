@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulsating Glow</title>
+</head>
+<style>
+    .neonText {
+        color: #fff;
+        text-shadow:
+            /*0 0 7px #fff,*/
+            /*0 0 10px #fff,*/
+            /*0 0 21px #fff,*/
+            0 0 42px #2600fb,
+            0 0 82px #0026cf,
+            0 0 92px #0028d8,
+            0 0 102px #c704f8;
+        /*0 0 151px #0632f5;*/
+    }
+
+    html {
+        background: url('https://cdn.pixabay.com/photo/2020/05/29/13/54/abandon-5235254_960_720.jpg') no-repeat center fixed;
+        background-size: cover;
+    }
+
+    body {
+        font-size: 18px;
+        font-family: 'Italianno', cursive;
+    }
+
+    h1 {
+        text-align: center;
+        font-weight: normal;
+        line-height: 0.95em;
+        font-size: 5.2rem;
+        animation: pulsate 0.11s ease-in-out infinite alternate;
+    }
+
+
+    @keyframes pulsate {
+
+        100% {
+
+            text-shadow:
+                0 0 4px #fff,
+                0 0 11px #fff,
+                0 0 19px #fff,
+                0 0 40px #5271ff,
+                0 0 80px #5271ff,
+                0 0 90px #5271ff,
+                0 0 100px #5271ff,
+                0 0 150px #5271ff;
+
+        }
+
+        50% {
+
+            text-shadow:
+                0 0 4px #fff,
+                0 0 10px #fff,
+                0 0 18px #fff,
+                0 0 38px #c704f8,
+                0 0 73px #c704f8,
+                0 0 80px #c704f8,
+                0 0 94px #c704f8,
+                0 0 140px #c704f8;
+
+        }
+
+        0% {
+
+            text-shadow:
+                0 0 4px #fff,
+                0 0 10px #fff,
+                0 0 18px #fff,
+                0 0 38px #5271ff,
+                0 0 73px #5271ff,
+                0 0 80px #5271ff,
+                0 0 94px #5271ff,
+                0 0 140px #5271ff;
+
+        }
+    }
+</style>
+
+<body>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    <div class="container">
+        <h1 class="neonText">
+            Change<br>
+            the world<br>
+            by being<br>
+            yourself
+    </div>
+</body>
+
+</html>
