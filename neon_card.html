@@ -23,7 +23,7 @@
         body {
             font-size: 18px;
             font-family: "Sacramento", sans-serif;
-            background: url("https://image.freepik.com/free-vector/neon-circle-with-light-effect-modern-round-frame-with-empty-space_106065-49.jpg") no-repeat center fixed;
+            background: url("https://ak.picdn.net/shutterstock/videos/1031990543/thumb/1.jpg") no-repeat center fixed;
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -32,15 +32,34 @@
             flex-direction: column;
         }
 
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            flex-direction: column;
+            border: 0.2rem solid #fff;
+            border-radius: 50%;
+            margin-top: 2rem;
+            height: 70rem;
+            width: 70rem;
+            box-shadow: 0 0 .2rem #fff,
+                0 0 .2rem #fff,
+                0 0 2rem #84f602,
+                0 0 0.8rem #6a00f5,
+                0 0 2.8rem #2e00fa,
+                inset 0 0 1.3rem #dd02f1;
+        }
+
         h1 {
-            font-size: 4rem;
+            font-size: 3.8em;
             font-weight: 200;
             animation: pulsate 1.5s infinite alternate;
-            border: 0.2rem solid #fff;
+            border: 0.05em solid #fff;
             border-radius: 4em;
             padding: 0.4em;
-            margin-top: 2.5em;
-            margin-bottom: 1.5em;
+            margin-top: 1.5em;
+            margin-bottom: 1.3em;
             box-shadow: 0 0 .2rem #fff,
                 0 0 .2rem #fff,
                 0 0 2rem #84f602,
@@ -50,8 +69,8 @@
         }
 
         .img {
-            width: 500px;
-            height: 350px;
+            width: 30em;
+            height: 20em;
             background-image: url("https://thegritandgraceproject.org/wp-content/uploads/2019/04/How-to-Become-the-Woman-You-Want-to-Be-1300x866.jpg");
             background-position: center;
             background-size: cover;
@@ -107,23 +126,45 @@
 
             }
         }
+
+        @media screen and (max-width: 70rem) {
+            .card {
+                width: 50rem;
+                height: 50rem;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p {
+                font-size: 2.0em;
+            }
+
+            .img {
+                width: 20em;
+                height: 14em;
+            }
+        }
     </style>
 </head>
 
 <body>
     <link href='https://fonts.googleapis.com/css?family=Sacramento:400' rel='stylesheet' type='text/css'>
-    <div class="neonText">
-        <h1>
-            My friend, Olivia
-        </h1>
-    </div>
-    <div class="letter">
-        <div class="img"></div>
-        <p>
-            Happy birthday my friend.<br>
-            I hope you have a nice day.<br>
-            -Your Sincere friend, Jay-
-        </p>
+    <div class="card">
+        <div class="neonText">
+            <h1>
+                My friend, Olivia
+            </h1>
+        </div>
+        <div class="letter">
+            <div class="img"></div>
+            <p>
+                Happy birthday my friend.<br>
+                I hope you have a nice day.<br>
+                -Your Sincere friend, Jay-
+            </p>
+        </div>
     </div>
 </body>
 
