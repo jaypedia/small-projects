@@ -1,5 +1,0 @@
-/* hidden class : 요소를 숨긴다. 
-자바스크립트를 불러오기 전부터, hidden 클래스를 적용한 두 요소는 숨겨지게 된다.*/
-.hidden {
-  display: none;
-}
