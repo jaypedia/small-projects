@@ -13,7 +13,7 @@
 
   /* Font Weight */
   --weight-light: 300;
-  --weight-regular: 400;
+  --weight-regular: 550;
   --weight-semi-bold: 600;
 }
 
@@ -37,6 +37,7 @@ button {
   background: none;
   border: 0;
   cursor: pointer;
+  font-family: monospace, sans-serif;
 }
 
 input {
@@ -51,13 +52,14 @@ input {
 
 input::placeholder {
   color: rgb(255, 255, 255);
+  font-family: monospace, sans-serif;
 }
 
 /* Clock */
 #clock {
   padding-top: 200px;
   font-size: var(--font-large);
-  font-weight: var(--weight-semi-bold);
+  font-weight: var(--weight-regular);
   cursor: default;
   opacity: 0.9;
 }
@@ -87,3 +89,24 @@ input::placeholder {
 /* Ask Name */
 
 /* To dDo List */
+
+/* Quote */
+#quote {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  font-size: var(--font-medium);
+  text-shadow: rgb(0, 0, 0) 1px 0 5px;
+}
+
+/* Weather */
+#weather {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  text-shadow: rgb(0, 0, 0) 1px 0 5px;
+}
+
+#weather div:first-child {
+  font-size: var(--font-medium);
+}
