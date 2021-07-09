@@ -50,3 +50,12 @@ if (savedToDos !== null) {
   toDos = parsedToDos;
   parsedToDos.forEach(paintTodo);
 }
+
+function snFilter() {}
+
+[1, 2, 3, 4].filter(snFilter);
+
+snFilter(1);
+snFilter(2);
+snFilter(3);
+snFilter(4);
