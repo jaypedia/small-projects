@@ -1,3 +1,59 @@
 .hidden {
   display: none;
 }
+
+/* Global */
+:root {
+  /* Font Size */
+  --font-micro: 16px;
+  --font-small: 18px;
+  --font-medium: 20px;
+  --font-regular: 36px;
+  --font-large: 140px;
+
+  /* Font Weight */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-semi-bold: 600;
+}
+
+/* Universal Tags */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  text-align: center;
+  font-family: monospace, sans-serif;
+  color: cyan;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+input {
+  width: 300px;
+  height: 35px;
+  background-color: rgb(172, 255, 117);
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  font-size: var(--font-micro);
+}
+
+input:focus,
+input:active {
+  outline: none;
+}
+
+input::placeholder {
+  color: rgb(146, 142, 142);
+}
