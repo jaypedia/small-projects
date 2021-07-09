@@ -1,22 +1,24 @@
 'use strict';
 
-const images = [
-  '1.jpeg',
-  '2.jpeg',
-  '3.jpg',
-  '4.jpg',
-  '5.jpg',
-  '6.jpg',
-  '7.jpg',
-  '8.jpeg',
-  '9.jpg',
-  '10.jpg',
-];
+const body = document.querySelector('body');
 
-const chosenImage = images[Math.floor(Math.random() * images.length)];
+const IMG_NUMBER = 10;
 
-const bgImage = document.createElement('img');
+function paintImage(imgNumber) {
+  const image = new Image();
+  image.src = `./img/${imgNumber + 1}.jpg`;
+  image.classList.add('bgImage');
+  body.appendChild(image);
+}
 
-bgImage.src = `img/${chosenImage}`;
+function genRandom() {
+  const number = Math.floor(Math.random() * 10);
+  return number;
+}
 
-document.body.appendChild(bgImage);
+function init() {
+  const randomNumber = genRandom();
+  paintImage(randomNumber);
+}
+
+init();
