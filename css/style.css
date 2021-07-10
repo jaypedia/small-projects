@@ -35,12 +35,32 @@ ul {
 }
 
 button {
-  background: none;
+  background-color: rgba(255, 255, 255, 0.6);
   border: 0;
+  border-radius: 50%;
   cursor: pointer;
   color: rgb(102, 99, 99);
   font-size: var(--font-micro);
   text-shadow: #fff 1px 0 1px;
+  margin: 0 10px;
+
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+
+button:hover,
+button:focus,
+button:active {
+  background-color: rgb(102, 99, 99);
+  color: white;
 }
 
 input {
@@ -99,6 +119,7 @@ input::placeholder {
 /* Greetings */
 #greeting {
   font-size: var(--font-regular);
+  cursor: default;
 }
 
 /* To Do List */
@@ -109,7 +130,7 @@ input::placeholder {
 #todo-list {
   font-size: var(--font-medium);
   padding-left: 0px;
-  border: rgb(255, 255, 255) solid;
+  border: rgba(255, 255, 255, 0.5) solid;
   border-radius: 10px;
   width: 600px;
   margin: 0px auto;
@@ -117,11 +138,27 @@ input::placeholder {
 
 /* Quote */
 #quote {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
+  margin-top: 300px;
   font-size: var(--font-medium);
   text-shadow: rgb(0, 0, 0) 1px 0 5px;
+  cursor: default;
+
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+#quote:hover,
+#quote:focus,
+#quote:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Weather */
@@ -130,6 +167,7 @@ input::placeholder {
   top: 30px;
   right: 30px;
   text-shadow: rgb(0, 0, 0) 1px 0 5px;
+  cursor: default;
 }
 
 #weather div:first-child {
