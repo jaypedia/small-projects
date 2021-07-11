@@ -53,9 +53,8 @@ button {
   border: 0;
   border-radius: 50%;
   cursor: pointer;
-  color: rgb(102, 99, 99);
-  font-size: var(--font-micro);
-  text-shadow: #fff 1px 0 1px;
+  color: black;
+  font-size: var(--font-small);
   margin: 0 10px;
 
   display: inline-block;
@@ -148,6 +147,10 @@ input::placeholder {
   margin: 0px auto;
 }
 
+#todo-list li {
+  margin: 5px auto;
+}
+
 /* Quote */
 #quote {
   position: fixed;
@@ -202,5 +205,9 @@ input::placeholder {
   input {
     width: 270px;
     height: 30px;
+  }
+
+  #todo-list {
+    width: 450px;
   }
 }
