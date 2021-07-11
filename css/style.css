@@ -189,3 +189,20 @@ input::placeholder {
 #weather div:first-child {
   font-size: var(--font-medium);
 }
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  :root {
+    /* Font Size */
+    --font-micro: 8px;
+    --font-small: 14px;
+    --font-medium: 18px;
+    --font-regular: 26px;
+    --font-large: 85px;
+  }
+
+  input {
+    width: 270px;
+    height: 30px;
+  }
+}
