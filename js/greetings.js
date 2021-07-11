@@ -2,8 +2,8 @@ const loginForm = document.querySelector('#login-form');
 const loginInput = document.querySelector('#login-form input');
 const greeting = document.querySelector('#greeting');
 
-const HIDDEN_CLASSNAME = 'hidden';
-const USERNAME_KEY = 'username';
+const HIDDEN_CLASSNAME = 'hidden',
+  USERNAME_KEY = 'username';
 
 function onLoginSubmit(event) {
   event.preventDefault();
@@ -14,8 +14,15 @@ function onLoginSubmit(event) {
 }
 
 function paintGreetings(username) {
-  greeting.innerText = `Hello, ${username}!`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
+  const hour = new Date().getHours();
+  const hello =
+    hour >= 18
+      ? 'Good evening'
+      : hour >= 12
+      ? 'Good afternoon'
+      : 'Good morning';
+  greeting.innerText = `${hello}, ${username}!`;
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
