@@ -163,8 +163,8 @@ input::placeholder {
 /* Quote */
 #quote {
   position: fixed;
-  left: 5%;
-  bottom: 5%;
+  left: 30px;
+  bottom: 30px;
   font-size: var(--font-medium);
   text-shadow: rgb(0, 0, 0) 1px 0 5px;
   cursor: default;
@@ -183,8 +183,8 @@ input::placeholder {
 #quote:hover,
 #quote:focus,
 #quote:active {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+  -webkit-transform: scale(1.07);
+  transform: scale(1.07);
 }
 
 /* Weather */
