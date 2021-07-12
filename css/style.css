@@ -96,6 +96,14 @@ input::placeholder {
   text-transform: uppercase;
 }
 
+/* Date */
+#date {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  font-size: var(--font-medium);
+}
+
 /* Clock */
 #clock {
   padding-top: 200px;
