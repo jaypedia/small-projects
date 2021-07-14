@@ -1,7 +1,6 @@
 const loginForm = document.querySelector('#login-form');
 const loginInput = document.querySelector('#login-form input');
 const greeting = document.querySelector('#greeting');
-const todoList = document.querySelector('#todo-list');
 
 const HIDDEN_CLASSNAME = 'hidden',
   USERNAME_KEY = 'username';
@@ -35,14 +34,3 @@ if (savedUsername === null) {
 } else {
   paintGreetings(savedUsername);
 }
-
-// Remove Todo border - not working 
-/*
-const todos = localStorage.getItem('todos');
-
-if (todos === null) {
-  todoList.classList.add(HIDDEN_CLASSNAME);
-} else {
-  todoList.classList.remove(HIDDEN_CLASSNAME);
-}
-*/
