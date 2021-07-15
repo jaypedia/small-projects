@@ -42,5 +42,10 @@ header {
 .player {
   display: flex;
   justify-content: center;
-  padding: 20px 0;
+  padding: 20px;
+}
+
+video {
+  width: 100% !important;
+  height: auto !important;
 }
