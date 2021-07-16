@@ -6,6 +6,20 @@
   color: white;
 }
 
+section {
+  padding: 10px 20px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
 /* (1) Header */
 header {
   display: flex;
@@ -42,10 +56,62 @@ header {
 .player {
   display: flex;
   justify-content: center;
-  padding: 20px;
 }
 
 video {
   width: 100% !important;
   height: auto !important;
+}
+
+/* (3) Video Info */
+
+.hashtags {
+  display: flex;
+}
+
+.hashtags li {
+  font-size: 14px;
+  color: #3ea6ff;
+  padding: 0 3px;
+}
+
+.titleAndButton {
+  display: flex;
+}
+
+.title {
+  font-size: 16px;
+}
+
+.moreBtn {
+  position: absolute;
+  right: 20px;
+}
+
+.views {
+  font-size: 14px;
+  color: #bbb8b8;
+}
+
+.actionBtn {
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actionBtn button {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 50px;
+}
+
+.actionBtn i,
+span {
+  font-size: 14px;
+}
+
+.active {
+  color: #3ea6ff;
 }
