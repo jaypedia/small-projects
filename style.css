@@ -30,24 +30,24 @@ header {
   padding: 0 10px;
 }
 
-.logo i {
+header .logo i {
   color: red;
   font-size: 24px;
   background-color: black;
 }
 
-.logo span {
+header .logo span {
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -1px;
   background-color: black;
 }
 
-.icon {
+header .icon {
   background-color: black;
 }
 
-.icon i {
+header .icon i {
   padding: 0 5px;
   color: #bbb8b8;
   background-color: black;
@@ -57,29 +57,34 @@ header {
 .player {
   display: flex;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
-video {
-  width: 1000px;
+.player video {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
 }
 
 /* (3) Video Info */
-
-.hashtags {
+/* (3-1) Metadata */
+.info .metadata .hashtags {
   display: flex;
 }
 
-.hashtags li {
+.info .metadata .hashtags li {
   font-size: 14px;
   color: #3ea6ff;
   padding: 0 3px;
 }
 
-.titleAndButton {
+.info .metadata .titleAndButton {
   display: flex;
 }
 
-.title {
+.info .metadata .titleAndButton .title {
   font-size: 16px;
 }
 
@@ -94,42 +99,56 @@ video {
   color: #bbb8b8;
 }
 
+.info .metadata .titleAndButton .title.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.info .metadata .titleAndButton .moreBtn {
+  height: 100%;
+  transition: transform 300ms ease-in-out;
+}
+
+.info .metadata .titleAndButton .moreBtn.clicked {
+  transform: rotate(180deg);
+}
+
+/* Action Buttons */
 .actionBtn {
-  display: flex;
   height: 50px;
-  justify-content: space-between;
+  display: flex;
   align-items: center;
+  justify-content: space-around;
+  margin: 6px 0;
 }
 
 .actionBtn button {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 50px;
+  font-size: 15px;
   opacity: 0.7;
 }
 
-.actionBtn i,
-span {
-  font-size: 15px;
-}
-
-.active {
+.actionBtn button .active {
   color: #3ea6ff;
 }
 
+/* (3-3) Channel Description */
 .channel {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  width: 100%;
-  height: 70px;
-  align-items: center;
 }
 
 .channel .metadata {
   display: flex;
   align-items: center;
+  padding: 10px 0;
 }
 
 .metadata img {
@@ -154,11 +173,10 @@ span {
   background-color: #cc0000;
   text-transform: uppercase;
   border-radius: 2px;
-  margin-left: 500px;
+  height: 42px;
 }
 
 /* (4) Up Next */
-
 .videoList {
   display: flex;
   width: 100%;
@@ -176,17 +194,18 @@ span {
 }
 
 /* over 1000px */
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1400px) {
   .contents {
     display: flex;
     margin: 30px 50px;
   }
 
-  .upNext .videoList {
-    width: 500px;
+  video {
+    width: 100%;
+    max-width: 1200px;
   }
 
-  video {
-    width: 1200px;
+  .actionBtn {
+    justify-content: right;
   }
 }
