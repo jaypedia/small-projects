@@ -49,6 +49,7 @@ header {
 
 .icon i {
   padding: 0 5px;
+  color: #bbb8b8;
   background-color: black;
 }
 
@@ -59,8 +60,6 @@ header {
 }
 
 video {
-  width: 100% !important;
-  height: auto !important;
 }
 
 /* (3) Video Info */
@@ -88,8 +87,13 @@ video {
   right: 20px;
 }
 
+.moreBtn i {
+  color: #bbb8b8;
+}
+
 .views,
-.subscribers {
+.subscribers,
+.thumbnailInfo .youtuber {
   font-size: 14px;
   color: #bbb8b8;
 }
@@ -155,4 +159,20 @@ span {
   background-color: #cc0000;
   text-transform: uppercase;
   border-radius: 3px;
+}
+
+/* (4) Up Next */
+.videoList {
+  display: flex;
+  margin-bottom: 4px;
+}
+
+.thumbnail img {
+  width: 170px;
+  padding-right: 6px;
+}
+
+.thumbnailInfo {
+  display: flex;
+  flex-direction: column;
 }
