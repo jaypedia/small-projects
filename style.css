@@ -88,7 +88,8 @@ video {
   right: 20px;
 }
 
-.views {
+.views,
+.subscribers {
   font-size: 14px;
   color: #bbb8b8;
 }
@@ -105,13 +106,53 @@ video {
   align-items: center;
   flex-direction: column;
   width: 50px;
+  opacity: 0.7;
 }
 
 .actionBtn i,
 span {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .active {
   color: #3ea6ff;
+}
+
+.channel {
+  display: flex;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  height: 70px;
+  align-items: center;
+}
+
+.channel .metadata {
+  display: flex;
+  align-items: center;
+}
+
+.metadata img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  padding-right: 10px;
+}
+
+.channel div.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.youtuber {
+  font-size: 15px;
+}
+
+.subBtn {
+  position: absolute;
+  right: 20px;
+  padding: 10px;
+  font-size: 15px;
+  background-color: #cc0000;
+  text-transform: uppercase;
+  border-radius: 3px;
 }
