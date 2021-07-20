@@ -1,5 +1,17 @@
+:root {
+  --text-color: white;
+  --backgrount-color: #5075a2;
+  --accent-color: #c7bdb1;
+  --icon-color: #8aa9cc;
+}
+
 * {
   font-family: 'Playfair Display', serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
 }
 
 header h1 {

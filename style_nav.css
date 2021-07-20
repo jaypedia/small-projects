@@ -1,0 +1,29 @@
+@import 'style.css';
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5075a2;
+  color: var(--text-color);
+  padding: 8px 12px;
+}
+
+.navbar__logo {
+  font-size: 30px;
+}
+
+.navbar__menu {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.navbar__menu li {
+  font-size: 20px;
+  padding: 8px 20px;
+}
+
+.navber__menu li:hover {
+  background-color: var(--accent-color);
+}
