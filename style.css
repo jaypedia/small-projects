@@ -25,15 +25,23 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
+  height: 60px;
   background-color: black;
   padding: 0 10px;
+  position: sticky;
+  top: 0;
 }
 
 header .logo i {
   color: red;
   font-size: 24px;
   background-color: black;
+}
+
+header .logo i.fa-bars {
+  font-size: 18px;
+  color: #bbb8b8;
+  padding-right: 15px;
 }
 
 header .logo span {
@@ -57,8 +65,6 @@ header .icon i {
 .player {
   display: flex;
   justify-content: center;
-  position: sticky;
-  top: 0;
   z-index: 1;
 }
 
@@ -179,7 +185,6 @@ header .icon i {
 /* (4) Up Next */
 .videoList {
   display: flex;
-  width: 100%;
   margin-bottom: 4px;
 }
 
