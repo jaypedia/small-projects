@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <script
+      src="https://kit.fontawesome.com/8d0a3fd827.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+  </head>
+  <body>
+    <div class="container">
+      <center><h1>Registration Form</h1></center>
+      <hr />
+      <!-- NAME -->
+      <label for="firstname">Firstname</label>
+      <input
+        type="text"
+        id="firstname"
+        name="ftname"
+        placeholder="Firstname"
+        size="15"
+        required
+      />
+      <label for="middlename">Middlename</label>
+      <input
+        type="text"
+        id="middlename"
+        name="mnname"
+        placeholder="Middlename"
+        size="15"
+      />
+      <label for="lastname">Lastname</label>
+      <input
+        type="text"
+        id="lastname"
+        name="ltname"
+        placeholder="Lastname"
+        size="15"
+        required
+      />
+
+      <!-- GENDER -->
+      <div>
+        <label for="gender">Gender</label>
+        <br />
+        <input
+          type="radio"
+          id="gender"
+          value="Female"
+          name="gender"
+          checked
+        />Female
+        <input
+          type="radio"
+          id="gender"
+          value="Male"
+          name="gender"
+          checked
+        />Male
+      </div>
+
+      <!-- PHONE -->
+      <label for="Phone">Phone</label>
+      <input
+        type="text"
+        name="country code"
+        placeholder="Country Code"
+        value="+82"
+        size="2"
+      />
+      <input
+        type="text"
+        id="Phone"
+        name="phone"
+        placeholder="phone no."
+        size="10"
+        required
+      />
+
+      <!-- EMAIL -->
+      <label for="email">Email</label>
+      <input
+        type="text"
+        id="email"
+        placeholder="Enter Email"
+        name="email"
+        required
+      />
+
+      <!-- BUTTONS -->
+      <button type="submit" value="submit">Submit</button>
+      <button type="reset" value="submit">Reset</button>
+    </div>
+  </body>
+</html>
