@@ -1,0 +1,44 @@
+#form {
+  padding: 20px 50px;
+  background-color: var(--color-light-white);
+}
+
+#form input[type='text'] {
+  padding: 10px;
+  width: 100%;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: var(--color-light-purple);
+  border-radius: var(--input-border-radius);
+}
+
+#form input[type='text']:focus {
+  background-color: var(--color-white);
+  outline: none;
+}
+
+hr {
+  border: 1px solid var(--color-purple);
+  margin-bottom: 25px;
+  opacity: 0.3;
+}
+
+label {
+  font-size: 20px;
+}
+
+button {
+  font-size: 18px;
+  background-color: var(--color-dark-purple);
+  color: var(--color-white);
+  margin: 8px 0;
+  border: none;
+  border-radius: var(--input-border-radius);
+  cursor: pointer;
+  padding: 12px;
+  opacity: 0.85;
+}
+
+button:hover {
+  opacity: 1;
+}
