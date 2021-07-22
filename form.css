@@ -1,3 +1,7 @@
+h1 {
+  letter-spacing: 2px;
+}
+
 #form {
   padding: 20px 50px;
   background-color: var(--color-light-white);
@@ -11,11 +15,17 @@
   background: var(--color-light-purple);
   border-radius: var(--input-border-radius);
   transition: all 0.3s ease 0s;
+  letter-spacing: 3px;
+  font-size: 16px;
 }
 
 #form input[type='text']:focus {
   background-color: var(--color-white);
   outline: none;
+}
+
+input[id='password'] {
+  -webkit-text-security: disc;
 }
 
 hr {
