@@ -38,37 +38,36 @@
       <center><h1>Registration Form</h1></center>
       <hr />
       <!-- NAME -->
-      <label for="firstname">Firstname</label>
+      <label for="firstname">First Name</label>
       <input
         type="text"
         id="firstname"
-        name="ftname"
+        name="firstname"
         placeholder="Firstname"
         size="15"
         required
       />
-      <label for="middlename">Middlename</label>
-      <input
-        type="text"
-        id="middlename"
-        name="mnname"
-        placeholder="Middlename"
-        size="15"
-      />
-      <label for="lastname">Lastname</label>
+      <label for="middlename">Last Name</label>
       <input
         type="text"
         id="lastname"
-        name="ltname"
+        name="lastname"
+        placeholder="Middlename"
+        size="15"
+      />
+      <label for="lastname">Nickname</label>
+      <input
+        type="text"
+        id="nickname"
+        name="nickname"
         placeholder="Lastname"
         size="15"
         required
       />
 
       <!-- GENDER -->
-      <div>
+      <div class="gender">
         <label for="gender">Gender</label>
-        <br />
         <input
           type="radio"
           id="gender"
@@ -81,29 +80,40 @@
 
       <!-- PHONE -->
       <label for="Phone">Phone</label>
-      <input
-        type="text"
-        name="country code"
-        placeholder="Country Code"
-        value="+82"
-        size="2"
-      />
-      <input
-        type="text"
-        id="Phone"
-        name="phone"
-        placeholder="phone no."
-        size="10"
-        required
-      />
+      <div class="phone">
+        <input
+          type="text"
+          id="code"
+          name="country code"
+          placeholder="Country Code"
+          value="+82"
+        />
+        <input
+          type="text"
+          id="phonenum"
+          name="phone"
+          placeholder="phone no."
+          required
+        />
+      </div>
 
       <!-- EMAIL -->
-      <label for="email">Email</label>
+      <label for="email">E-mail</label>
       <input
         type="text"
         id="email"
         placeholder="Enter Email"
         name="email"
+        required
+      />
+
+      <!-- PASSWORD -->
+      <label for="password">Password</label>
+      <input
+        type="text"
+        id="password"
+        placeholder="Enter Password"
+        name="password"
         required
       />
 

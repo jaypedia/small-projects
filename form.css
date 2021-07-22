@@ -10,6 +10,7 @@
   border: none;
   background: var(--color-light-purple);
   border-radius: var(--input-border-radius);
+  transition: all 0.3s ease 0s;
 }
 
 #form input[type='text']:focus {
@@ -25,6 +26,14 @@ hr {
 
 label {
   font-size: 20px;
+}
+
+.gender {
+  margin: 5px 0 22px 0;
+}
+
+.phone {
+  display: flex;
 }
 
 .button {
