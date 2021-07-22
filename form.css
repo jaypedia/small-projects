@@ -33,16 +33,20 @@ label {
 }
 
 button {
-  font-size: 18px;
+  font-size: 15px;
+  width: 130px;
   background-color: var(--color-dark-purple);
   color: var(--color-white);
   margin: 8px 0;
   border: none;
-  border-radius: var(--input-border-radius);
+  border-radius: 45px;
   cursor: pointer;
   padding: 12px;
-  opacity: 0.85;
   text-transform: uppercase;
+  letter-spacing: 2.5px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease 0s;
+  outline: none;
 }
 
 button[type='reset'] {
@@ -51,5 +55,8 @@ button[type='reset'] {
 }
 
 button:hover {
-  opacity: 1;
+  background-color: white;
+  color: black;
+  box-shadow: 0 15px 20px rgba(104, 54, 185, 0.4);
+  transform: translateY(-5px);
 }
