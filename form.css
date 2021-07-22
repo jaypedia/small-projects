@@ -27,6 +27,11 @@ label {
   font-size: 20px;
 }
 
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
 button {
   font-size: 18px;
   background-color: var(--color-dark-purple);
@@ -37,6 +42,12 @@ button {
   cursor: pointer;
   padding: 12px;
   opacity: 0.85;
+  text-transform: uppercase;
+}
+
+button[type='reset'] {
+  background-color: var(--color-dark-grey);
+  margin-left: 10px;
 }
 
 button:hover {
