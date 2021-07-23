@@ -69,8 +69,9 @@
       <!-- GENDER -->
       <div class="gender">
         <label for="gender">Gender</label>
-        <input type="radio" id="gender" value="Female" name="female" />Female
-        <input type="radio" id="gender" value="Male" name="male" />Male
+        <!-- The radio group must share the same name to be treated as a group -->
+        <input type="radio" id="gender" value="Female" name="gender" />Female
+        <input type="radio" id="gender1" value="Male" name="gender" />Male
       </div>
 
       <!-- PHONE -->
