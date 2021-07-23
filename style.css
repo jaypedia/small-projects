@@ -91,7 +91,9 @@ li {
   margin: 0 4px;
   cursor: pointer;
   color: var(--color-white);
-  border-radius: var(--border-radius);
+  border-radius: 45px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .navbar__menu__item:hover {
