@@ -42,8 +42,22 @@ label {
   margin: 5px 0 22px 0;
 }
 
+.gender label {
+  padding-right: 30px;
+}
+
+.gender input {
+  margin: 0 10px;
+}
+
 .phone {
   display: flex;
+}
+
+/* Select only this */
+.phone input#code {
+  margin-right: 8px;
+  width: 20%;
 }
 
 .button {

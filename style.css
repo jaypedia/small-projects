@@ -1,4 +1,5 @@
 @import 'form.css';
+@import 'response.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 
 :root {
@@ -6,7 +7,7 @@
   --color-white: #ffffff;
   --color-light-white: #fbf7f7;
   --color-dark-grey: #4d4d4d;
-  --color-light-purple: #c4b2fd;
+  --color-light-purple: #e2d9ff;
   --color-purple: #7f60e2;
   --color-dark-purple: #5232b7;
   --color-yellow: #f6ca06;

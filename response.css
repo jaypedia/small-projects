@@ -1,0 +1,5 @@
+@media screen and (min-width: 700px) {
+  #form::after {
+    content: 'Hello, Be our member!';
+  }
+}
