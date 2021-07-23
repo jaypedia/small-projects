@@ -87,7 +87,8 @@ button[type='reset'] {
   margin-left: 10px;
 }
 
-button:hover {
+button:hover,
+button:focus {
   background-color: white;
   color: black;
   box-shadow: 0 15px 20px rgba(104, 54, 185, 0.4);
