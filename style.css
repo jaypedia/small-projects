@@ -101,4 +101,5 @@ li {
 .search input {
   border-radius: var(--input-border-radius);
   height: 30px;
+  outline: none;
 }

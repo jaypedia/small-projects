@@ -1,5 +1,9 @@
 @media screen and (min-width: 700px) {
-  #form::after {
-    content: 'Hello, Be our member!';
+  #form {
+    padding: 20px 100px;
+  }
+
+  .search input#searchbar {
+    width: 220px;
   }
 }
