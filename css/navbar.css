@@ -1,53 +1,5 @@
-@import 'form.css';
-@import 'response.css';
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
-
-:root {
-  /* Color */
-  --color-white: #ffffff;
-  --color-light-white: #fbf7f7;
-  --color-dark-grey: #4d4d4d;
-  --color-light-purple: #e2d9ff;
-  --color-purple: #7f60e2;
-  --color-dark-purple: #5232b7;
-  --color-yellow: #f6ca06;
-
-  /* Font size */
-  --font-large: 48px;
-  --font-medium: 28px;
-  --font-regular: 18px;
-  --font-small: 16px;
-  --font-micro: 14px;
-
-  --border-radius: 4px;
-  --input-border-radius: 8px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  cursor: default;
-  font-family: 'Roboto Slab', serif;
-}
-
-a {
-  text-decoration: none;
-  color: var(--color-white);
-}
-
-ul {
-  padding-left: 0;
-}
-
-li {
-  list-style: none;
-}
-
 #navbar {
-  background: url('img/home-background.png') center/cover no-repeat;
+  background: url('/img/home-background.png') center/cover no-repeat;
   width: 100%;
   display: flex;
   justify-content: space-between;
