@@ -96,6 +96,7 @@ li {
 
 .navbar__menu__item:hover {
   background-color: var(--color-yellow);
+  transition: all 0.3s ease 0s;
 }
 
 .search input {
