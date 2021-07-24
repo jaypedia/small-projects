@@ -5,6 +5,7 @@ h1 {
 form {
   padding: 20px 50px;
   background-color: var(--color-light-white);
+  max-width: 800px;
 }
 
 label {
