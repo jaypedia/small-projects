@@ -2,6 +2,7 @@ body {
   transition: 0.3s;
   margin: 0;
   padding: 0;
+  background-color: rgb(241, 241, 241);
 }
 
 header {
@@ -62,4 +63,16 @@ header {
 .main-text {
   width: 50%;
   padding: 30px;
+}
+
+.square {
+  width: 98%;
+  margin: 1%;
+  height: 350px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.dark .square {
+  background-color: rgb(71, 71, 71);
 }
