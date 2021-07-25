@@ -1,5 +1,13 @@
 body {
   transition: 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
 }
 
 .switch {
@@ -40,4 +48,18 @@ body {
 
 .dark .flicker {
   transform: translateX(40px);
+}
+
+/* All the child > * */
+.dark > * {
+  color: rgb(255, 255, 255);
+}
+
+.main {
+  height: 80vh;
+}
+
+.main-text {
+  width: 50%;
+  padding: 30px;
 }
