@@ -111,9 +111,40 @@ header {
   background-color: rgb(71, 71, 71);
 }
 
+#revenoo {
+  background-image: url('images/project1.png');
+  background-size: cover;
+}
+
+#burgerrator {
+  background-image: url('images/project2.png');
+  background-size: cover;
+}
+
+#news {
+  background-image: url('images/project3.png');
+  background-size: cover;
+}
+
+#dates {
+  background-image: url('images/project8.png');
+  background-size: cover;
+}
+
 .sub-section {
   display: flex;
   flex-wrap: wrap;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 100px 30px;
+  background-color: rgb(141, 140, 140);
+}
+
+.dark footer {
+  background-color: rgb(28, 28, 28);
 }
 
 /* For screens wider than 970px */
