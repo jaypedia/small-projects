@@ -1,4 +1,4 @@
-import { Wave } from 'wave.js';
+import { WaveGroup } from 'wavegroup.js';
 
 class App {
   constructor() {
