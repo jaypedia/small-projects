@@ -1,4 +1,4 @@
-import { Point } from './point.js';
+import { Point } from 'point.js';
 
 // Bring the coordinates of the animation I want to draw
 // Bring the width and height of the stage
