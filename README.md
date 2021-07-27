@@ -10,4 +10,4 @@ Painting Board made with VanillaJS
 - Fill canvas
 - Save images
 
-[Try it out!](https://serranoarevalo.github.io/paintjs/)
+[Try it out!](https://)
