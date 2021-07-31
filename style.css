@@ -1,7 +1,7 @@
 :root {
   --text-color: white;
   --backgrount-color: #7597ee;
-  --accent-color: #7bfbff;
+  --accent-color: #4de4e9;
   --icon-color: rgb(255, 163, 224);
 }
 
@@ -11,7 +11,7 @@
 
 body {
   margin: 0;
-  font-family: "Parisienne", cursive;
+  font-family: 'Parisienne', cursive;
 }
 
 a {
@@ -76,10 +76,16 @@ a {
   right: 32px;
   font-size: 24px;
   color: var(--accent-color);
+  transition: transform 300ms ease-in-out;
 }
 
 .navbar__toggleBtn:hover {
   color: var(--icon-color);
+}
+
+/* Not Working */
+.navbar__toggleBtn.active {
+  transform: rotate(180deg);
 }
 
 @media screen and (max-width: 768px) {
