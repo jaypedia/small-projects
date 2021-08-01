@@ -6,4 +6,4 @@ try : https://jaypedia.github.io/momentum/
 * random background
 * to-do list
 * weather
-* nice quotes
+* quotes
