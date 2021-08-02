@@ -1,2 +1,2 @@
-# Neon Game
-A simple retro game with Neon theme.
+# Neon Games
+Games with Neon theme.
