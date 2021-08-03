@@ -42,7 +42,7 @@
 
     <section>
       <form>
-        <center><h1>Registration Form</h1></center>
+        <h1>Registration Form</h1>
         <hr />
 
         <!-- NAME -->
@@ -84,13 +84,19 @@
         <!-- PHONE -->
         <label for="phone">Phone</label>
         <div class="phone">
-          <input
-            type="text"
-            id="code"
-            name="country code"
-            placeholder="Enter Country Code"
-            value="+82"
-          />
+          <input type="number" list="code" id="country_code" />
+          <datalist id="code">
+            <option>+82</option>
+            <option>+32</option>
+            <option>+1</option>
+            <option>+45</option>
+            <option>+372</option>
+            <option>+995</option>
+            <option>+36</option>
+            <option>+95</option>
+            <option>+31</option>
+            <option>+351</option>
+          </datalist>
           <input
             type="text"
             id="phone"
