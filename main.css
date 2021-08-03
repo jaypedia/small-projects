@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;1,100;1,200&family=Work+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --clr-primary: rgb(81, 105, 243);
+  --clr-light: rgb(226, 222, 222);
+  --clr-dark: rgb(8, 8, 8);
+  --clr-warning: rgb(112, 40, 40);
+}
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  font-size: 1.5rem;
+  background-color: var(--clr-primary);
+  color: var(--clr-light);
+
+  display: grid;
+  /* height is auto */
+  grid:
+    'header header header header' auto
+    '...... lists  active ......' auto /
+    1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+}
+
+.title {
+  grid-area: header;
+}
+
+.all-tasks {
+  grid-area: lists;
+}
+
+.todo-list {
+  grid-area: active;
+}
