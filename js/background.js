@@ -1,6 +1,7 @@
 'use strict';
 
 const body = document.querySelector('body');
+const backgroundBtn = document.querySelector('#background .bgbtn');
 
 const IMG_NUMBER = 10;
 
@@ -12,7 +13,7 @@ function paintImage(imgNumber) {
 }
 
 function genRandom() {
-  const number = Math.floor(Math.random() * 10);
+  const number = Math.floor(Math.random() * IMG_NUMBER);
   return number;
 }
 
@@ -22,3 +23,4 @@ function init() {
 }
 
 init();
+backgroundBtn.addEventListener('click', init);

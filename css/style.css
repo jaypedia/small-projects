@@ -48,7 +48,7 @@ ul {
   list-style: none;
 }
 
-button {
+#todo-list button {
   background-color: rgba(255, 255, 255, 0.6);
   border: 0;
   border-radius: 50%;
@@ -69,9 +69,10 @@ button {
   transition-property: color, background-color;
 }
 
-button:hover,
-button:focus,
-button:active {
+#todo-list button:hover,
+#todo-list button:focus,
+#todo-list button:active,
+#background .bgbtn:hover {
   background-color: rgb(102, 99, 99);
   color: white;
 }
@@ -209,6 +210,14 @@ input::placeholder {
 
 #weather div:first-child {
   font-size: var(--font-medium);
+}
+
+#background .bgbtn {
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  font-size: 20px;
+  border-radius: 10px;
 }
 
 /* For below 768px screen width */
