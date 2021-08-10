@@ -153,6 +153,7 @@ input::placeholder {
 .task-count {
   margin: 0;
   font-size: 1rem;
+  font-weight: 700;
   color: var(--clr-primary);
 }
 
