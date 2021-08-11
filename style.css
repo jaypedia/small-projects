@@ -13,6 +13,11 @@ body {
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 10px 10px rgba(12, 12, 12, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  cursor: url('img/paint-brush-solid.png'), auto;
+}
+
+canvas:hover {
+  cursor: url('img/paint-brush-solid.png'), auto;
 }
 
 .controls {
@@ -31,24 +36,27 @@ body {
   cursor: pointer;
   background-color: white;
   padding: 5px 0px;
-  width: 80px;
+  margin: 0 5px;
+  width: 100px;
   text-align: center;
   border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 7px 7px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   color: rgba(0, 0, 0, 0.7);
   text-transform: uppercase;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 2px;
+  transition: all 200ms ease-in;
 }
 
 .controls__btns button:active {
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 
 .controls__btns button:hover {
-  opacity: 0.8;
+  transform: scale(1.1);
+  border: 1px solid rgba(0, 0, 0, 1);
 }
 
 .controls .controls__colors {
@@ -65,4 +73,11 @@ body {
 
 .controls .controls__range {
   margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  width: 50%;
 }
