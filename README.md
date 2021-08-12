@@ -1,4 +1,4 @@
-# simple-todo
+# Simple Todo List
 
 ## What I learned📑
 
