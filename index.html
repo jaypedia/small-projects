@@ -7,6 +7,10 @@
     <title>Todo list</title>
     <link rel="stylesheet" href="main.css" />
     <script src="script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/8d0a3fd827.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- 1. TITLE -->
@@ -30,8 +34,11 @@
           data-new-list-input
           placeholder="new list name"
           aria-label="new list name"
+          required
         />
-        <button class="btn create" aria-label="create new list">+</button>
+        <button class="btn create" aria-label="create new list">
+          <i class="fas fa-plus-square"></i>
+        </button>
       </form>
     </div>
 
@@ -78,15 +85,22 @@
                 class="new task"
                 placeholder="new task name"
                 aria-label="new task name"
+                required
               />
-              <button class="btn create" aria-label="create new task">+</button>
+              <button class="btn create" aria-label="create new task">
+                <i class="fas fa-plus-square"></i>
+              </button>
             </form>
           </div>
 
           <!-- Delete Buttons -->
           <div class="delete-stuff">
-            <button class="btn delete">Clear completed tasks</button>
+            <button class="btn delete">
+              <i class="fas fa-broom"></i>
+              Clear completed tasks
+            </button>
             <button class="btn delete" data-delete-list-button>
+              <i class="fas fa-trash-alt"></i>
               Delete list
             </button>
           </div>

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200&family=Work+Sans:wght@300;400;500;600&display=swap');
 
 :root {
-  --clr-primary: rgb(81, 105, 243);
+  --clr-primary: rgb(42, 3, 149);
   --clr-light: rgb(241, 241, 241);
   --clr-light-gray: rgb(226, 226, 226);
   --clr-dark: rgb(8, 8, 8);
@@ -38,9 +38,9 @@ body {
   text-align: center;
   font-size: calc(7vw + 2rem);
   font-weight: 700;
-  color: rgba(0, 0, 0, 0.15);
+  color: rgba(179, 179, 179, 0.4);
   margin: -0.3em 0 0.5em;
-  text-shadow: 0 -5px 0px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 -5px 0px rgba(197, 13, 230, 0.3);
 }
 
 .all-tasks {
@@ -133,7 +133,7 @@ input::placeholder {
 /* 3. TODO LIST  */
 .todo-list {
   --spacer: 2rem;
-
+  border-radius: 30px;
   grid-area: active;
   background-color: var(--clr-light);
   color: var(--clr-dark);
@@ -146,6 +146,7 @@ input::placeholder {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 30px;
 }
 
 .list-title {
