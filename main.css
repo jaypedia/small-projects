@@ -245,21 +245,24 @@ input::placeholder {
   transform-origin: left;
 }
 
-.delete-stuff {
-  display: flex;
-  justify-content: space-evenly;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: -50px;
-  color: var(--clr-light);
+.btn.delete, .btn.clear {
+  font-size: 1.1rem;
+  transition: color 200ms;
+  margin-top: 20px;
 }
 
 .btn.delete {
-  font-size: 1.1rem;
-  transition: color 200ms;
+  color: var(--clr-light-gray);
 }
 
 .btn.delete:hover {
   color: var(--clr-warning);
+}
+
+.btn.clear {
+  color: var(--clr-primary);
+}
+
+.btn.clear:hover {
+  color: var(--clr-accent);
 }

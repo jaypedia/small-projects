@@ -8,6 +8,7 @@
   - form action
   - aria-label(input's attribute) : To keep it as accessible as possible, so a screen reader will know what the purpose of this input
   - data-\* Attribute : to store custom data private to the application
+  - <template> tag
 
 - CSS
 
@@ -21,3 +22,7 @@
   - transform-origin
 
 - JavaScript
+
+ - find & filter
+ - importNode
+ - htmlFor

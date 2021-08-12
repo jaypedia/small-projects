@@ -7,10 +7,6 @@
     <title>Todo list</title>
     <link rel="stylesheet" href="main.css" />
     <script src="script.js" defer></script>
-    <script
-      src="https://kit.fontawesome.com/8d0a3fd827.js"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
     <!-- 1. TITLE -->
@@ -40,72 +36,53 @@
           <i class="fas fa-plus-square"></i>
         </button>
       </form>
+      <button class="btn delete" data-delete-list-button>
+        <i class="fas fa-trash-alt"></i>
+        Delete list
+      </button>
     </div>
 
     <!-- 3. TODO LIST -->
-    <div class="todo-list">
+    <div class="todo-list" data-list-display-container>
       <div class="todo-header">
-        <h2 class="list-title">Work</h2>
-        <p class="task-count">3 task remaining</p>
+        <h2 class="list-title" data-list-title>Work</h2>
+        <p class="task-count" data-list-count>3 tasks remaining</p>
       </div>
 
       <div class="todo-body">
-        <div class="tasks">
-          <div class="task">
-            <input type="checkbox" id="task-1" />
-            <label for="task-1">
-              <span class="custom-checkbox"></span>
-              Complete a report
-            </label>
-          </div>
-          <!-- /task-1 -->
+        <div class="tasks" data-tasks></div>
 
-          <div class="task">
-            <input type="checkbox" id="task-2" />
-            <label for="task-2">
-              <span class="custom-checkbox"></span>
-              anoter task
-            </label>
-          </div>
-          <!-- /task-2 -->
-
-          <div class="task">
-            <input type="checkbox" id="task-3" />
-            <label for="task-3">
-              <span class="custom-checkbox"></span>
-              a third task
-            </label>
-          </div>
-          <!-- /task-3 -->
-
-          <div class="new-task-creator">
-            <form action="">
-              <input
-                type="text"
-                class="new task"
-                placeholder="new task name"
-                aria-label="new task name"
-                required
-              />
-              <button class="btn create" aria-label="create new task">
-                <i class="fas fa-plus-square"></i>
-              </button>
-            </form>
-          </div>
-
-          <!-- Delete Buttons -->
-          <div class="delete-stuff">
-            <button class="btn delete">
-              <i class="fas fa-broom"></i>
-              Clear completed tasks
+        <div class="new-task-creator">
+          <form action="" data-new-task-form>
+            <input
+              type="text"
+              data-new-task-input
+              class="new task"
+              placeholder="new task name"
+              aria-label="new task name"
+              required
+            />
+            <button class="btn create" aria-label="create new task">
+              <i class="fas fa-plus-square"></i>
             </button>
-            <button class="btn delete" data-delete-list-button>
-              <i class="fas fa-trash-alt"></i>
-              Delete list
-            </button>
-          </div>
+          </form>
+          <button class="btn clear" data-clear-complete-tasks-button>
+            <i class="fas fa-broom"></i>
+            Clear completed tasks
+          </button>
         </div>
+
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox" />
+        <label>
+          <span class="custom-checkbox"></span>
+        </label>
       </div>
-    </div>
+    </template>
+    <script
+      src="https://kit.fontawesome.com/8d0a3fd827.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
