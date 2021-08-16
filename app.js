@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'milkshake', img: 'images/milkshake.png' },
     { name: 'hotdog', img: 'images/hotdog.png' },
   ];
+  let cardsChosen = [];
+  let cardsChosenId = [];
+
   const grid = document.querySelector('.grid');
 
   function createBoard() {
@@ -21,7 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
       card.setAttribute('src', 'images/blank.png');
       card.setAttribute('data-id', i);
       grid.appendChild(card);
+      card.addEventListener('click', flipCard);
     }
+  }
+
+  function flipCard() {
+    let cardId = this.getAttribute('data-id');
+    cardsChosen.push(cardArray[cardId].name);
+    cardsChosenId.push(cardId);
+    this.setAttribute('src', cardArray[cardId].img);
   }
 
   createBoard();
