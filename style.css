@@ -18,11 +18,17 @@ h2 {
   text-shadow: 2px 3px 0px rgb(240, 20, 130);
 }
 
+.box {
+  display: flex;
+  justify-content: space-between;
+  width: 409px;
+}
+
 .grid {
   background-color: antiquewhite;
   display: flex;
   flex-wrap: wrap;
-  height: 300px;
-  width: 400px;
+  height: 310px;
+  width: 409px;
   gap: 3px;
 }
