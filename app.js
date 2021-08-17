@@ -17,6 +17,7 @@ function handleInput(e) {
 
 function handleDelete() {
   listRow.removeChild(item);
+  console.log('delete');
 }
 
 form.addEventListener('submit', handleInput);
