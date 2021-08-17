@@ -13,21 +13,21 @@
     ></script>
   </head>
   <body>
-    <header>
-      <button><i class="fas fa-play"></i></button>
-      <div class="timer">00:00</div>
-      <div class="number">0</div>
-    </header>
+    <section class="game">
+      <header class="game__header">
+        <button claee="game__button">
+          <i class="fas fa-play"></i>
+        </button>
+        <span class="game__timer">00:00</span>
+        <span class="game__number">10</span>
+      </header>
+    </section>
 
-    <div class="modal">
-      <div class="won">
-        <i class="fas fa-undo-alt"></i>
-        <p>You Won!🥕</p>
-      </div>
-      <div class="lost">
-        <i class="fas fa-undo-alt"></i>
-        <p>You Lost!🐞</p>
-      </div>
-    </div>
+    <section class="pop-up">
+      <button class="pop-up__refresh">
+        <i class="fas fa-redo"></i>
+      </button>
+      <span class="pop-up__message">You Won!🥕 You Lost!🐞 Replay?😉</span>
+    </section>
   </body>
 </html>
