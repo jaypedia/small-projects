@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=STIX+Two+Text:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
 
 html {
-  height: 100%;
+  /* height: 100%; */
+  background: linear-gradient(rgb(163, 163, 230), rgb(240, 200, 226));
 }
 
 body {
@@ -10,55 +15,68 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 95%;
-  background: linear-gradient(45deg, rgb(113, 113, 206), rgb(192, 86, 157));
+  /* height: 95vh; */
 }
 
-h3 {
+.title {
+  font-size: 35px;
   margin-top: 0;
+  margin-bottom: 40px;
   color: white;
   font-family: 'Petit Formal Script', cursive;
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .frame {
-  background-color: rgba(223, 231, 231, 0.7);
-  width: 40vh;
-  height: 75vh;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 5px solid rgba(255, 255, 255, 0.9);
+  width: 35vh;
+  height: 70vh;
   position: relative;
-  border-radius: 20px;
-  font-family: 'STIX Two Text', serif;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.title {
-  color: rgb(0, 0, 0);
+header {
+  background-color: white;
+  height: 50px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 10px;
+}
+
+header {
   margin-top: 10px;
+  font-size: 23px;
+  font-weight: 400;
+  color: rgb(122, 121, 121);
   text-align: center;
 }
 
-hr {
-  opacity: 0.5;
-  margin: 5px;
+img {
+  width: 25px;
+  height: 25px;
 }
 
 input {
   display: block;
   position: absolute;
-  bottom: 40px;
+  bottom: 65px;
   padding: 0;
   width: 100%;
-  height: 20px;
+  height: 30px;
   border: none;
   outline: none;
   transition: all 0.5s ease-in;
+  color: rgb(0, 19, 128);
 }
 
 input:focus {
 }
 
 input::placeholder {
-  font-family: 'STIX Two Text', serif;
+  font-family: 'Montserrat', sans-serif;
   padding-left: 5px;
 }
 
@@ -75,15 +93,15 @@ input:focus::placeholder {
   border-radius: 50%;
   outline: none;
   border-style: none;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   font-size: 20px;
-  background: linear-gradient(45deg, rgb(113, 113, 206), rgb(192, 86, 157));
   color: white;
-  transition: all 0.5s ease-in;
+  background: linear-gradient(45deg, rgb(115, 115, 228), rgb(240, 200, 226));
+  transition: all 250ms ease-in;
   font-weight: lighter;
 }
 
 #add:hover {
-  box-shadow: 3px 3px 3px black;
+  transform: scale(1.1);
 }
