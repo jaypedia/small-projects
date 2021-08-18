@@ -6,6 +6,8 @@ body {
   align-items: center;
   background-color: midnightblue;
   color: white;
+  height: 100vh;
+  margin: 0;
 }
 
 h1 {
@@ -31,4 +33,8 @@ h2 {
   height: 310px;
   width: 409px;
   gap: 3px;
+}
+
+.hidden {
+  display: none;
 }

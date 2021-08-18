@@ -7,16 +7,26 @@
     <title>Memory Game</title>
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/8d0a3fd827.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>🙄Memory Game😚</h1>
-    <h2>Test your memory!</h2>
-    <h3 class="time">Time : 00:00:00</h3>
-    <div class="box">
-      <h3>Score : <span id="result">0</span></h3>
-      <form><button>Replay</button></form>
-    </div>
+    <header class="game__header">
+      <h1 class="game__title">🙄Memory Game😚</h1>
+      <h2 claee="game__subtitle">Test your memory!</h2>
+    </header>
 
-    <div class="grid"></div>
+    <section class="game__box">
+      <h3 class="game__score">Score : <span id="result">0</span></h3>
+      <h3 class="game__time">Time : <span id="time">00:00</span></h3>
+      <div class="grid"></div>
+    </section>
+
+    <section class="pop-up">
+      <span class="pop-up__message">Replay?</span>
+      <button class="pop-up__replay"><i class="fas fa-redo"></i></button>
+    </section>
   </body>
 </html>
