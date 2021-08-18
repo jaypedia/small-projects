@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Lobster Two', cursive;
   display: flex;
@@ -10,29 +15,66 @@ body {
   margin: 0;
 }
 
-h1 {
-  text-shadow: 2px 3px 0px rgb(240, 20, 130);
-  margin: 10px;
+header .game__title {
+  font-size: 3rem;
+  text-shadow: 5px 5px 0px rgb(240, 20, 130);
 }
 
-h2 {
-  margin: 5px;
+header .game__subtitle {
+  font-size: 2rem;
   text-shadow: 2px 3px 0px rgb(240, 20, 130);
+  text-align: center;
 }
 
-.box {
+.game__box .score-time {
   display: flex;
   justify-content: space-between;
   width: 409px;
+  font-size: 1.3rem;
 }
 
-.grid {
+.game__box .grid {
   background-color: antiquewhite;
   display: flex;
   flex-wrap: wrap;
   height: 310px;
   width: 409px;
   gap: 3px;
+}
+
+.pop-up {
+  position: absolute;
+  top: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+}
+
+.pop-up .pop-up__message {
+  text-shadow: 2px 3px 0px rgb(240, 20, 130);
+  margin-bottom: 10px;
+}
+
+.pop-up .pop-up__replay {
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  color: rgb(240, 20, 130);
+  font-size: 1.3rem;
+  background-color: white;
+  border-radius: 50%;
+  border: 3px solid midnightblue;
+}
+
+.pop-up .pop-up__replay:hover {
+  background-color: rgb(240, 20, 130);
+  color: white;
 }
 
 .hidden {
