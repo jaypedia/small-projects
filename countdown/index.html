@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10 seconds countdown</title>
+  </head>
+  <style>
+    @font-face {
+      font-family: sevenSegment;
+      src: url('seven-segment.ttf');
+    }
+
+    body {
+      background: linear-gradient(#0f0c29, #302b63, #24243e);
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: sevenSegment;
+      font-size: 10em;
+      color: rgb(234, 235, 233);
+      text-shadow: 0px 0px 7px rgb(178, 241, 6), 0px 0px 20px rgb(178, 241, 6),
+        0px 0px 30px rgb(178, 241, 6), 0px 0px 80px rgb(178, 241, 6);
+    }
+
+    button {
+      cursor: pointer;
+      font-family: sevenSegment;
+      margin: 10px;
+      border-radius: 10px;
+      font-size: 3em;
+    }
+
+    .container {
+      position: absolute;
+      top: 20%;
+      left: 10%;
+    }
+  </style>
+  <body>
+    <button class="start">10 Seconds</button>
+    <button class="stop">Stop</button>
+    <div class="container">
+      <h1 id="count">10</h1>
+    </div>
+
+    <script>
+      const start = document.querySelector('button.start');
+      const stop = document.querySelector('button.stop');
+      const count = document.querySelector('#count');
+      let seconds = 10;
+
+      function countDown() {
+        if (seconds == 0) {
+          count.innerHTML = 'complete';
+        } else {
+          count.innerHTML = --seconds;
+        }
+      }
+
+      start.addEventListener('click', () => {
+        setInterval(countDown, 1000);
+      });
+
+      stop.addEventListener('click', () => {});
+    </script>
+  </body>
+</html>
