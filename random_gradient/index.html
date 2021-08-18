@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Gradient</title>
+    <script src="main.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/8d0a3fd827.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        /* background: linear-gradient(#59c173, #a17fe0, #5d26c1); */
+      }
+
+      button {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        font-size: 5em;
+        /* color: mediumturquoise; */
+      }
+
+      button:hover {
+        color: #e64717;
+      }
+
+      span {
+        font-size: 3em;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <button><i class="fas fa-dice"></i></button>
+    <span class="dice-color">Dice Color : <span id="color"></span></span>
+  </body>
+</html>
