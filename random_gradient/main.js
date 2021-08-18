@@ -5,7 +5,7 @@ function random(number) {
   return Math.round(Math.random() * number);
 }
 
-btn.onclick = function () {
+function onClick() {
   const rndGradient = `linear-gradient(rgb(${random(255)},${random(
     255
   )},${random(255)}), rgb(${random(255)},${random(255)},${random(255)}))`;
@@ -14,4 +14,6 @@ btn.onclick = function () {
   btn.style.color = rndColor;
   diceColor.style.color = rndColor;
   diceColor.innerHTML = rndColor;
-};
+}
+
+btn.addEventListener('click', onClick);
