@@ -17,6 +17,28 @@ document.addEventListener('DOMContentLoaded', () => {
   let cardsChosenId = [];
 
   const grid = document.querySelector('.grid');
+  const popUp = document.querySelector('.pop-up');
+  const playBtn = document.querySelector('button.game__play');
+  const replayBtn = document.querySelector('.pop-up .pop-up__replay');
+  const message = document.querySelector('.pop-up .pop-up__message');
+
+  function playGame() {
+    popUp.classList.add('hidden');
+    createBoard();
+    playBtn.innerHTML = '<i class="fas fa-stop"></i>';
+    playBtn.removeEventListener('click', playGame);
+    playBtn.addEventListener('click', replayGame);
+    // Start stopwatch
+  }
+
+  function replayGame() {
+    popUp.classList.remove('hidden');
+    // Initialize stopwatch
+    // Fix : playGame() function - don't make the board again
+  }
+
+  replayBtn.addEventListener('click', playGame);
+  playBtn.addEventListener('click', playGame); // Need to Fix
 
   function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
@@ -39,6 +61,4 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(checkForMatch, 500);
     }
   }
-
-  createBoard();
 });
