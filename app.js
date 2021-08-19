@@ -1,41 +1,48 @@
 const form = document.querySelector('form');
 const input = form.querySelector('input');
 const addBtn = form.querySelector('button.add');
-const listRow = document.querySelector('li.list__row');
+const lists = document.querySelector('ul.lists');
 
-function handleInput(e) {
+function onAdd(e) {
   e.preventDefault();
   const userInput = input.value;
-  if (userInput !== '') {
-    createItem(userInput);
-    input.value = '';
-  } else {
+  if (userInput === '') {
     alert('What do you want to do before you die?😉');
+    input.focus();
+    return;
   }
+  const item = createItem(userInput);
+  lists.appendChild(item);
+  item.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  input.value = '';
   input.focus();
 }
 
+let id = 0;
+
 function createItem(userInput) {
-  const items = document.createElement('div');
-  items.setAttribute('class', 'items');
-
-  const span = document.createElement('span');
-  span.setAttribute('class', 'list__name');
-  span.textContent = userInput;
-
-  const deleteBtn = document.createElement('button');
-  deleteBtn.setAttribute('class', 'list__delete');
-  deleteBtn.innerHTML = '<img src="bucket-list.png" alt="bucket" />';
-  deleteBtn.addEventListener('click', () => {
-    listRow.removeChild(items);
-  });
-
-  items.appendChild(span);
-  items.appendChild(deleteBtn);
-  listRow.appendChild(items);
-
-  items.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  const listRow = document.createElement('li');
+  listRow.setAttribute('class', 'list__row');
+  listRow.setAttribute('data-id', id);
+  listRow.innerHTML = `
+  <div class="items">
+    <span class="list__name">${userInput}</span>
+    <button class="list__delete">
+      <img src="bucket-list.png" alt="bucket" data-id="${id}"/>
+    </button>
+  </div>`;
+  id++;
+  return listRow;
 }
 
-form.addEventListener('submit', handleInput);
-addBtn.addEventListener('click', handleInput);
+function deleteItem(event) {
+  const targetId = event.target.dataset.id;
+  if (targetId) {
+    const toBeDeleted = document.querySelector(`li[data-id='${targetId}']`);
+    toBeDeleted.remove();
+  }
+}
+
+form.addEventListener('submit', onAdd);
+addBtn.addEventListener('click', onAdd);
+lists.addEventListener('click', deleteItem);
