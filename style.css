@@ -61,7 +61,7 @@ button i {
 }
 
 .game__timer {
-  width: 200px;
+  width: 150px;
   border: 5px solid var(--color-black);
   background-color: var(--color-white);
   border-radius: 10px;
