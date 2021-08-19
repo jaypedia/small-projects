@@ -6,20 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrot Game</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
     <script
       src="https://kit.fontawesome.com/8d0a3fd827.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
+    <section class="title">
+      <h1 class="game__title">🥕Find 20 Carrots in 20 seconds!🥕</h1>
+    </section>
     <section class="game">
       <header class="game__header">
         <button class="game__button">
           <i class="fas fa-play"></i>
         </button>
         <span class="game__timer">00:00</span>
-        <span class="game__number">10</span>
+        <span class="game__number">20</span>
       </header>
       <section class="game__field"></section>
     </section>
