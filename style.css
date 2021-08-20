@@ -69,7 +69,7 @@ button i {
   margin: 10px 0;
 }
 
-.game__number {
+.game__score {
   width: 70px;
   height: 70px;
   border: 5px solid var(--color-black);
@@ -90,7 +90,7 @@ button i {
 .pop-up {
   display: block;
   position: absolute;
-  bottom: 150px;
+  bottom: 25%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -99,16 +99,30 @@ button i {
   justify-content: center;
   width: 500px;
   height: 200px;
-  background-color: #00000070;
+  background-color: #00000080;
   border-radius: 20px;
 }
 
 .pop-up__message {
   color: var(--color-white);
-  font-size: 3em;
+  font-size: 45px;
   text-transform: uppercase;
+  margin-top: 10px;
 }
 
 .pop-up--hide {
   display: none;
+}
+
+.carrot,
+.bug {
+  cursor: pointer;
+}
+
+.carrot:hover {
+  transform: scale(1.1);
+}
+
+.bug:hover {
+  transform: scale(1.1);
 }
