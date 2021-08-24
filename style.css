@@ -15,6 +15,7 @@
 body {
   font-family: 'Recursive', sans-serif;
   background-color: var(--color-black);
+  position: relative;
 }
 
 .game__title {
@@ -91,7 +92,7 @@ button i {
 .pop-up {
   display: block;
   position: absolute;
-  bottom: 25%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
