@@ -8,9 +8,7 @@ export default class Field {
     this.bugCount = bugCount;
     this.field = document.querySelector('.game__field');
     this.fieldRect = this.field.getBoundingClientRect();
-    this.onClick = this.onClick.bind(this);
     this.field.addEventListener('click', this.onClick);
-    //this.field.addEventListener('click', (event) => this.onClick(event));
   }
 
   init() {
@@ -39,16 +37,16 @@ export default class Field {
     }
   }
 
-  onClick(event) {
+  onClick = (event) => {
     const target = event.target;
     if (target.matches('.carrot')) {
-      sound.playCarrotSound();
+      sound.playCarrot();
       target.remove();
       this.onItemClick && this.onItemClick('carrot');
     } else if (target.matches('.bug')) {
       this.onItemClick && this.onItemClick('bug');
     }
-  }
+  };
 }
 
 function randomNumber(num) {

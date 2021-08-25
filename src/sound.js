@@ -1,19 +1,19 @@
 const alertSound = new Audio('./sound/alert.wav');
 const carrotSound = new Audio('./sound/carrot_pull.mp3');
-const bugSound = new Audio('./sound/bug_pull.mp3');
+const failSound = new Audio('./sound/bug_pull.mp3');
 const bgSound = new Audio('./sound/bg.mp3');
 const winSound = new Audio('./sound/game_win.mp3');
 
-export function playCarrotSound() {
+export function playCarrot() {
   playSound(carrotSound);
 }
 
-export function playAlertSound() {
+export function playAlert() {
   playSound(alertSound);
 }
 
-export function playBugSound() {
-  playSound(bugSound);
+export function playLost() {
+  playSound(failSound);
 }
 
 export function playBackground() {
@@ -24,7 +24,7 @@ export function stopBackground() {
   bgSound.pause();
 }
 
-export function playWinSound() {
+export function playWin() {
   playSound(winSound);
 }
 
