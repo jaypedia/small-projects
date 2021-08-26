@@ -34,6 +34,7 @@ class Game {
     this.carrotCount = carrotCount;
     this.bugCount = bugCount;
 
+    this.carrotNum = document.querySelector('.game__carrotnum');
     this.gameTimer = document.querySelector('.game__timer');
     this.gameScore = document.querySelector('.game__score');
     this.gameBtn = document.querySelector('.game__button');
@@ -101,6 +102,7 @@ class Game {
   initGame() {
     this.score = 0;
     this.gameScore.innerHTML = this.carrotCount;
+    this.carrotNum.innerHTML = `🥕${this.score}`;
     this.gameField.init();
   }
 
@@ -129,5 +131,6 @@ class Game {
 
   updateScoreBoard() {
     this.gameScore.innerHTML = this.carrotCount - this.score;
+    this.carrotNum.innerHTML = `🥕${this.score}`;
   }
 }

@@ -43,6 +43,26 @@ body {
   padding: 20px;
 }
 
+.game__level {
+  position: fixed;
+  left: 20px;
+  background-color: var(--color-num);
+  color: var(--color-white);
+  border: 5px solid var(--color-black);
+  border-radius: 10%;
+  padding: 5px;
+}
+
+.game__carrotnum {
+  position: fixed;
+  right: 20px;
+  background-color: var(--color-num);
+  color: var(--color-white);
+  border: 5px solid var(--color-black);
+  border-radius: 10%;
+  padding: 5px;
+}
+
 button {
   cursor: pointer;
   border: 5px solid var(--color-black);
@@ -119,6 +139,23 @@ button i {
 .carrot,
 .bug {
   cursor: pointer;
+  animation: FadeInBySize 500ms;
+}
+
+@keyframes FadeInBySize {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .carrot:hover,
