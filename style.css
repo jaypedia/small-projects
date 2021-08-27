@@ -44,7 +44,7 @@ body {
 }
 
 .game__level {
-  position: fixed;
+  position: absolute;
   left: 20px;
   background-color: var(--color-num);
   color: var(--color-white);
@@ -54,7 +54,7 @@ body {
 }
 
 .game__carrotnum {
-  position: fixed;
+  position: absolute;
   right: 20px;
   background-color: var(--color-num);
   color: var(--color-white);

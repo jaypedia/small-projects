@@ -1,3 +1,5 @@
+'use strict';
+
 import { Field, ItemType } from './field.js';
 import * as sound from './sound.js';
 
@@ -7,6 +9,7 @@ export const Reason = Object.freeze({
   cancel: 'cancel',
 });
 
+// Builder Pattern
 export class GameBuilder {
   withGameDuration(duration) {
     this.gameDuration = duration;
@@ -38,6 +41,7 @@ class Game {
     this.gameTimer = document.querySelector('.game__timer');
     this.gameScore = document.querySelector('.game__score');
     this.gameBtn = document.querySelector('.game__button');
+    // Game button is the main one to start/stop the game
     this.gameBtn.addEventListener('click', () => {
       if (this.started) {
         this.stop(Reason.cancel);
@@ -54,6 +58,8 @@ class Game {
     this.timer;
   }
 
+  // A Callback function is set as a parameter.
+  // OnGameStop is a callback function that changes pop-up messages according to the reason when the game ends.
   setGameStopListener(onGameStop) {
     this.onGameStop = onGameStop;
   }
@@ -66,12 +72,12 @@ class Game {
     sound.playBackground();
   }
 
-  stop(reason) {
+  stop(reason, score) {
     this.started = false;
     this.stopGameTimer();
     this.hideGameButton();
     sound.stopBackground();
-    this.onGameStop && this.onGameStop(reason);
+    this.onGameStop && this.onGameStop(reason, score);
   }
 
   onItemClick = (item) => {
@@ -83,10 +89,10 @@ class Game {
       this.score++;
       this.updateScoreBoard();
       if (this.score === this.carrotCount) {
-        this.stop(Reason.win);
+        this.stop(Reason.win, this.carrotNum.innerText);
       }
     } else if (item === ItemType.bug) {
-      this.stop(Reason.lose);
+      this.stop(Reason.lose, this.carrotNum.innerText);
     }
   };
 

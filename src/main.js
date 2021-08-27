@@ -1,3 +1,5 @@
+'use strict';
+
 import PopUp from './popup.js';
 import { GameBuilder, Reason } from './game.js';
 import * as sound from './sound.js';
@@ -9,7 +11,8 @@ const game = new GameBuilder()
   .withBugCount(20)
   .build();
 
-game.setGameStopListener((reason) => {
+// When the game ends, a callback function that changes pop-up messages according to the reason is passed as an argument.
+game.setGameStopListener((reason, score) => {
   let message;
   switch (reason) {
     case Reason.cancel:
@@ -21,7 +24,7 @@ game.setGameStopListener((reason) => {
       sound.playWin();
       break;
     case Reason.lose:
-      message = 'YOU lost💩';
+      message = `No bugs!😫 ${score}`;
       sound.playLost();
       break;
     default:
