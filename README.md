@@ -1,1 +1,1 @@
-# mini-mall
+# Mini Mall

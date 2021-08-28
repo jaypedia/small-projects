@@ -9,6 +9,15 @@
   --color-yellow: #fac002;
   --color-pink: #f18d91;
   --color-light-grey: #dfdfdf;
+
+  /* size */
+  --size-button: 50px;
+  --font-size: 18px;
+  --base-space: 5px;
+  --size-border: 10px;
+
+  /* animation */
+  --animation-duration: 300ms;
 }
 
 * {
@@ -23,7 +32,7 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  transition: 300ms;
+  transition: var(--animation-duration);
 }
 
 h1 {
@@ -32,13 +41,14 @@ h1 {
   text-shadow: 4px 4px 4px var(--color-black);
 }
 
-img {
-  width: 50px;
+.btn img,
+.item img {
+  width: var(--size-button);
 }
 
 ul {
   padding-left: 0;
-  padding: 5px;
+  padding: var(--base-space);
   height: 700px;
   overflow-y: scroll;
 }
@@ -51,10 +61,10 @@ li {
 i {
   position: absolute;
   right: 20px;
-  font-size: 20px;
+  font-size: var(--font-size);
   cursor: pointer;
   color: var(--color-white);
-  transition: all 100ms ease-in;
+  transition: all var(--animation-duration) ease-in;
   background-color: var(--color-pink);
   padding: 8px;
   border-radius: 50%;
@@ -65,14 +75,20 @@ i:hover {
 }
 
 img.logo {
+  cursor: pointer;
   width: 100px;
+  transition: all var(--animation-duration) ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
 }
 
 button {
   cursor: pointer;
   border: none;
   background: transparent;
-  transition: all 100ms ease-in;
+  transition: all var(--animation-duration) ease-in;
 }
 
 .buttons {
@@ -83,10 +99,10 @@ button.colorBtn {
   color: var(--color-white);
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 18px;
-  padding: 5px;
-  border-radius: 10px;
-  margin: 5px;
+  font-size: var(--font-size);
+  padding: var(--base-space);
+  border-radius: var(--size-border);
+  margin: var(--base-space);
 }
 
 button:hover {
@@ -125,12 +141,12 @@ li.item {
   display: flex;
   align-items: center;
   margin: 10px 0;
-  padding: 5px;
-  border-radius: 10px;
+  padding: var(--base-space);
+  border-radius: var(--size-border);
 }
 
 .item__description {
-  font-size: 20px;
+  font-size: var(--font-size);
   padding: 0 10px;
   text-transform: uppercase;
 }
@@ -145,7 +161,7 @@ li.item {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--color-pink);
-  border-radius: 30px;
+  border-radius: var(--size-border);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -158,7 +174,7 @@ li.item {
   right: 30px;
   width: 80px;
   height: 40px;
-  border-radius: 20px;
+  border-radius: calc(var(--size-border) * 2);
   background-color: var(--color-dark-black);
 }
 
@@ -171,9 +187,7 @@ li.item {
   position: absolute;
   top: 5px;
   left: 5px;
-  box-shadow: inset -4px -4px 4px rgb(0 0 0 / 30%),
-    inset 4px 4px 4px rgb(255 255 255);
-  transition: 300ms;
+  transition: var(--animation-duration);
 }
 
 .moon {
@@ -191,6 +205,11 @@ li.item {
 }
 
 .dark .flicker {
+  background-color: var(--color-pink);
   transform: translateX(40px);
   z-index: 1;
+}
+
+.dark .switch {
+  background-color: var(--color-white);
 }
