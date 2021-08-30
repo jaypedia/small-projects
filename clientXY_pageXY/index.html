@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <aside class="buttons">
+      <button class="by100">Scroll by 100px(y)</button>
+      <button class="to100">Scroll to 100px(y)</button>
+      <button class="tospecial">Scroll into Special</button>
+    </aside>
+
     <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
@@ -21,6 +27,9 @@
 
     <script>
       const special = document.querySelector('.special');
+      const by100 = document.querySelector('.by100'); // 100 pixel씩 이동
+      const to100 = document.querySelector('.to100'); // 100 pixel로 이동
+      const tospecial = document.querySelector('.tospecial');
 
       function boxcoord(event) {
         let rect = special.getBoundingClientRect();
@@ -32,6 +41,28 @@
       }
 
       special.addEventListener('click', boxcoord);
+      by100.addEventListener('click', () => {
+        window.scrollBy({
+          top: 100,
+          left: 0,
+          behavior: 'smooth',
+        });
+      });
+
+      // scrollTo() is effectively the same as scroll().
+      to100.addEventListener('click', () => {
+        window.scroll({
+          top: 100,
+          left: 0,
+          behavior: 'smooth',
+        });
+      });
+      tospecial.addEventListener('click', () => {
+        special.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+      });
     </script>
   </body>
 </html>
