@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+}
+
+aside {
+  background-color: #f0f0f0;
+  color: #e7473c;
+  min-width: 450px;
+  max-width: 450px;
+  padding: 70px;
+  padding-right: 120px;
+}
+
+aside .title {
+  font-size: 70px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0 0 200px 0;
+}
+
+aside .subtitle {
+  font-size: 25px;
+}
+
+aside .description {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 23px;
+  padding-right: 20px;
+}
+
+a {
+  color: #6b6a6b;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin: 5px;
+}
+
+main {
+  background-color: #e7473c;
+  color: #ffffff;
+  overflow-y: auto;
+  width: 100%;
+}
+
+section {
+  margin: 120px;
+}
+
+section .video-description {
+  display: flex;
+  justify-content: space-between;
+}
+
+section .video-description .video-title {
+  font-size: 30px;
+  margin: 0;
+}
+
+section img {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+section .opinion {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.number {
+  margin: 5px;
+  font-size: 14px;
+  opacity: 70%;
+}
+
+.mention {
+  margin-right: 10px;
+}
+
+i {
+  margin-top: 15px;
+  cursor: pointer;
+  opacity: 70%;
+  font-size: 20px;
+  transition: all 250ms ease-out;
+}
+
+i:hover {
+  opacity: 1;
+}
