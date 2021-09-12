@@ -1,0 +1,170 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css');
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main {
+  width: 90%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: repeat(2, 3fr) repeat(6, 1fr);
+  grid-template-rows: 3fr repeat(2, 1fr) 2fr repeat(2, 1fr);
+  gap: 5px;
+}
+
+.nav {
+  background-color: white;
+  grid-row: span 6;
+  position: relative;
+}
+
+.nav .title {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.nav .menu li {
+  border-bottom: 1px solid #adb6e1;
+  padding: 5px;
+}
+
+.nav .menu li.selected {
+  background-color: #adb6e1;
+}
+
+.nav .location .city {
+  font-weight: 600;
+}
+
+.nav .telephone {
+  position: absolute;
+  bottom: 220px;
+}
+
+.nav .email {
+  position: absolute;
+  bottom: 200px;
+}
+
+.nav .location {
+  position: absolute;
+  bottom: 50px;
+}
+
+.nav .location .address {
+  padding-bottom: 20px;
+}
+
+.nav .language {
+  position: absolute;
+  bottom: 10px;
+}
+
+.large-title {
+  font-size: 40px;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.nav,
+.home,
+.services {
+  padding: 10px;
+}
+
+.tag,
+.menu {
+  text-transform: uppercase;
+}
+
+.home {
+  background-color: #adb6e1;
+  grid-row: span 4;
+}
+
+.home .large-title {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.home .description p {
+  padding: 10px 0;
+}
+
+.services {
+  background-color: #8694c6;
+  grid-row: 5/7;
+  grid-column: 2/3;
+}
+
+.services .title {
+  padding-top: 50px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.picture1 {
+  grid-column: 3/6;
+  grid-row: span 4;
+}
+
+.picture2 {
+  grid-column: 3/4;
+  grid-row: 5/7;
+}
+
+.picture3 {
+  grid-column: 4/5;
+}
+
+.picture4 {
+  grid-column: 4/5;
+}
+
+.picture5 {
+  grid-column: 5 / -1;
+  grid-row: 5 / -1;
+}
+
+.picture6 {
+  grid-column: 6 / -1;
+  grid-row: 1/2;
+}
+
+.picture7 {
+  grid-column: 6/8;
+  grid-row: 2/4;
+}
+
+.picture8 {
+  grid-column: 8 / -1;
+  grid-row: 2/3;
+}
+
+.picture9 {
+  grid-column: 8 / -1;
+  grid-row: 3/4;
+}
+
+.picture10 {
+  grid-column: 6 / 7;
+  grid-row: 4/5;
+}
+
+.picture11 {
+  grid-column: 7 / -1;
+  grid-row: 4/5;
+}
