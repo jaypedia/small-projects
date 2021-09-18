@@ -36,9 +36,8 @@ body {
 }
 
 h1 {
-  color: var(--color-white);
+  color: var(--color-black);
   margin: 15px 0;
-  text-shadow: 4px 4px 4px var(--color-black);
 }
 
 .btn img,
@@ -175,7 +174,7 @@ li.item {
   width: 80px;
   height: 40px;
   border-radius: calc(var(--size-border) * 2);
-  background-color: var(--color-dark-black);
+  background-color: var(--color-pink);
 }
 
 .flicker {
@@ -212,4 +211,8 @@ li.item {
 
 .dark .switch {
   background-color: var(--color-white);
+}
+
+.dark .content h1 {
+  color: var(--color-white);
 }
