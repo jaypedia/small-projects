@@ -25,12 +25,13 @@ body {
 
 .target {
   position: absolute;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
 }
 
 .tag {
   font-size: 30px;
   color: whitesmoke;
   position: absolute;
-  transform: translate(20%, 60%);
+  /* transform: translate(20%, 60%); */
+  margin: 20px;
 }

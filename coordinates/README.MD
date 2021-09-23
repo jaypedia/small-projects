@@ -8,6 +8,13 @@
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://icongr.am/devicon/javascript-original.svg?size=128&color=currentColor" alt="javascript" width="40" height="40"/> </a>
 </p>
 
+- 참고 사이트 : csstriggers.com
+
 ## Before
 
+- mousemove event가 발생할 때마다 top, left를 바꿔주는 것은 브라우저 성능에 좋지 않다.
+- layout, paint, composite이 모두 발생해야 하기 때문
+
 ## After
+
+- top, left 대신 transform 사용하기 : 이것은 composite만 발생하므로 더 나은 성능을 기대할 수 있다.
