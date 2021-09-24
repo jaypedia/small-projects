@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List</title>
+    <meta name="description" content="My shopping list" />
+    <meta name="author" content="Jay" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/8d0a3fd827.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <meta
+      property="og:image"
+      content="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/healthy-groceries-1525213305.jpg"
+    />
+    <meta property="og:description" content="Create your own shopping list" />
+    <meta property="og:title" content="Shopping List" />
+    <meta property="og:type" content="website" />
+
+    <link rel="shortcut icon" href="./img/shopping-list.png" type="image/png" />
+  </head>
+  <body>
+    <!--Create list-->
+    <div class="create-list-container">
+      <header>
+        <i class="fas fa-stream"></i>
+        <p class="title">Create List</p>
+        <i class="avatar fas fa-user-circle"></i>
+      </header>
+
+      <section class="info">
+        <div class="info__date">Friday, 24 September 2021</div>
+        <div class="info__category">
+          <select name="category" id="category-select">
+            <option value="">Please choose a category</option>
+            <option value="Groceries">Groceries</option>
+            <option value="Home & Lifetyle">Home & LifeStyle</option>
+            <option value="Health">Health</option>
+            <option value="Sports & Outdoors">Sports & Outdoors</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Electronic devices">Electronic devices</option>
+            <option value="Etc">Etc</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="lists-container">
+        <ul class="lists">
+          <li class="list__row">
+            <div class="items">
+              <span class="list__name"> Carrot </span>
+              <button class="list__delete"><i class="fas fa-minus"></i></button>
+            </div>
+          </li>
+          <li class="list__row">
+            <div class="items">
+              <span class="list__name"> Melon </span>
+              <button class="list__delete"><i class="fas fa-minus"></i></button>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <form>
+        <input type="text" placeholder="What do you want to buy?" required />
+        <button class="add-btn"><i class="fas fa-plus"></i></button>
+      </form>
+
+      <footer>
+        <button class="create-list-btn">Create my list</button>
+      </footer>
+    </div>
+
+    <!--My list-->
+    <div class="my-list-container">
+      <header>
+        <i class="fas fa-chevron-left"></i>
+        <p class="title">My List</p>
+        <i class="avatar fas fa-user-circle"></i>
+      </header>
+
+      <div class="list-container">
+        <div class="info__date">Tuesday, 25 May 2021</div>
+        <div class="info__category">Groceries</div>
+        <ul class="list">
+          <span class="list__name"> Carrot, Melon </span>
+        </ul>
+      </div>
+
+      <footer>
+        <button class="clear-list-btn">Clear my list</button>
+      </footer>
+    </div>
+  </body>
+</html>
