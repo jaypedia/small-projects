@@ -2,14 +2,49 @@
 
 :root {
   --bg-color: #e6e7eb;
-  --font-color: #868588;
+  --color-white: #ffffff;
+  --color-gray: #868588;
+  --color-purple: #7981ff;
+  --color-orange: #ff671a;
+  --color-yellow: #ffa928;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0;
+  overflow-y: scroll;
+  height: 400px;
+}
+
+li {
+  list-style: none;
+  margin: 10px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  border-radius: 45px;
+}
+
+button i {
+  color: var(--color-gray);
+}
+
+button i:hover {
+  color: var(--color-orange);
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: var(--bg-color);
-  height: 100vh;
   margin: 0;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,23 +52,102 @@ body {
 
 .create-list-container,
 .my-list-container {
-  background-color: #ffffff;
+  background-color: var(--color-white);
   min-width: 350px;
   min-height: 700px;
   border-radius: 45px;
   margin: 50px;
+  padding: 30px;
+  position: relative;
 }
 
 header {
   display: flex;
-  color: var(--font-color);
+  color: var(--color-gray);
   font-weight: 500;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding-bottom: 20px;
+}
+
+header .title {
+  margin: 0;
 }
 
 header .avatar {
   font-size: 25px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-purple);
+  border-radius: 45px;
+  padding: 5px;
+  color: var(--color-white);
+}
+
+.info .info__date {
+  font-weight: 500;
+}
+
+.info .info__category select {
+  outline: none;
+  border-radius: 45px;
+  text-align: center;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+}
+
+form {
+  position: absolute;
+  bottom: 100px;
+  width: 80%;
+}
+
+form input {
+  outline: none;
+  border-radius: 45px;
+  padding: 5px;
+  border: var(--color-purple) solid 1px;
+  width: 90%;
+}
+
+.create-list-btn {
+  position: absolute;
+  bottom: 30px;
+  padding: 10px;
+  color: var(--color-white);
+  background-color: var(--color-orange);
+}
+
+.clear-list-btn {
+  position: absolute;
+  bottom: 30px;
+  padding: 10px;
+  color: var(--color-white);
+  background-color: var(--color-yellow);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bg-color);
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-yellow);
 }
