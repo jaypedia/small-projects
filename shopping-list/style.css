@@ -102,7 +102,7 @@ header .avatar {
   text-align: center;
 }
 
-.items {
+.item {
   display: flex;
   justify-content: space-between;
 }

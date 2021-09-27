@@ -3,36 +3,63 @@
 const infoDate = document.querySelector('.info_date');
 const createListBtn = document.querySelector('.create-list-btn');
 const clearListBtn = document.querySelector('.clear-list-btn');
-const form = document.querySelector('form');
 const input = document.querySelector('input');
 const addBtn = document.querySelector('.add-btn');
-const lists = document.querySelector('ul.lists');
-const deleteBtn = document.querySelectorAll('.list__delete');
+const items = document.querySelector('.items');
 
-function handleAddList(e) {
-  e.preventDefault();
-  const userInput = input.value;
-  if (userInput.length > 20) {
-    alert('Too long!');
-  } else {
-    lists.innerHTML += `<li class="list__row">
-      <div class="items">
-        <span class="list__name">${userInput}</span>
-        <button class="list__delete"><i class="fas fa-minus"></i></button>
-      </div>
-    </li>`;
-    input.value = '';
+function onAdd() {
+  // 1. 사용자가 입력한 텍스트를 받아 온다.
+  const text = input.value;
+  // input에 focus가 있다가 버튼을 클릭하는 순간 focus가 버튼으로 옮겨 온다
+  // focus가 input에 남아있도록 하기 위해서 추가해 줌
+  if (text === '') {
+    input.focus();
+    return;
   }
+  // 2. 새로운 아이템을 만든다. (text + delete Button)
+  const item = createItem(text);
+  // 3. items 컨테이너 안에 새로 만든 아이템을 추가한다.
+  items.appendChild(item);
+  // 새로 추가된 "아이템"으로 스크롤링
+  item.scrollIntoView({ block: 'end' });
+  // 4. input을 초기화한다. + Focusing
+  input.value = '';
+  input.focus();
 }
 
-function handleDeleteList(e) {
-  console.log(e.path);
-  const path = e.path[3];
-  path.remove();
+// text를 전달받고, 그것으로 새로운 DOM 요소를 만든다.
+// li > div > span > button 만들기
+function createItem(text) {
+  const itemRow = document.createElement('li');
+  itemRow.setAttribute('class', 'item__row');
+
+  const item = document.createElement('div');
+  item.setAttribute('class', 'item');
+
+  const itemName = document.createElement('span');
+  itemName.setAttribute('class', 'item__name');
+  itemName.innerHTML = text;
+
+  const deleteBtn = document.createElement('button');
+  deleteBtn.setAttribute('class', 'item__delete');
+  deleteBtn.innerHTML = '<i class="fas fa-minus"></i>';
+  deleteBtn.addEventListener('click', () => {
+    items.removeChild(itemRow);
+  });
+
+  item.appendChild(itemName);
+  item.appendChild(deleteBtn);
+  itemRow.appendChild(item);
+
+  return itemRow;
 }
 
-form.addEventListener('submit', handleAddList);
-// 새로 추가한 list에는 적용되지 않는 문제
-deleteBtn.forEach(item => {
-  item.addEventListener('click', handleDeleteList);
+addBtn.addEventListener('click', () => {
+  onAdd();
+});
+
+input.addEventListener('keypress', event => {
+  if (event.key === 'Enter') {
+    onAdd();
+  }
 });

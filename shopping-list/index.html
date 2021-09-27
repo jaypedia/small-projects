@@ -49,25 +49,17 @@
         </div>
       </section>
 
-      <section class="lists-container">
-        <ul class="lists">
-          <li class="list__row">
-            <div class="items">
-              <span class="list__name"> Carrot </span>
-              <button class="list__delete"><i class="fas fa-minus"></i></button>
-            </div>
-          </li>
-          <li class="list__row">
-            <div class="items">
-              <span class="list__name"> Melon </span>
-              <button class="list__delete"><i class="fas fa-minus"></i></button>
-            </div>
-          </li>
-        </ul>
+      <section class="list">
+        <ul class="items"></ul>
       </section>
 
       <form>
-        <input type="text" placeholder="What do you want to buy?" required />
+        <input
+          type="text"
+          maxlength="15"
+          placeholder="What do you want to buy?"
+          required
+        />
         <button class="add-btn"><i class="fas fa-plus"></i></button>
       </form>
 
