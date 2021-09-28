@@ -137,6 +137,15 @@ form input {
   background-color: var(--color-yellow);
 }
 
+.all-clear-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 35px;
+  padding: 10px;
+  color: var(--color-white);
+  background-color: var(--color-gray);
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }

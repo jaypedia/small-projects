@@ -6,6 +6,7 @@ const clearListBtn = document.querySelector('.clear-list-btn');
 const input = document.querySelector('input');
 const addBtn = document.querySelector('.add-btn');
 const items = document.querySelector('.items');
+const allClearBtn = document.querySelector('.all-clear-btn');
 
 function onAdd() {
   // 1. 사용자가 입력한 텍스트를 받아 온다.
@@ -54,6 +55,12 @@ function createItem(text) {
   return itemRow;
 }
 
+function allClear() {
+  // const itemRow = document.querySelectorAll('li');
+  if (!confirm('All Clear?')) return;
+  items.innerHTML = '';
+}
+
 addBtn.addEventListener('click', () => {
   onAdd();
 });
@@ -62,4 +69,8 @@ input.addEventListener('keypress', event => {
   if (event.key === 'Enter') {
     onAdd();
   }
+});
+
+allClearBtn.addEventListener('click', () => {
+  allClear();
 });
