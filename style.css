@@ -10,12 +10,14 @@
 body {
   padding: 0;
   margin: 0;
-  background: linear-gradient(to right, pink, rgb(0, 26, 255));
+  background: linear-gradient(to right, #8e9eab, #eef2f3);
 }
 
 .title {
   font-weight: normal;
   text-align: center;
+  position: relative;
+  top: 30px;
 }
 
 .calculator-grid {
