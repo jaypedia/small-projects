@@ -18,6 +18,7 @@ body {
 }
 
 .key {
+  cursor: pointer;
   margin: 10px;
   width: 100px;
   height: 100px;
@@ -28,6 +29,10 @@ body {
   border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.45);
   transition: all 200ms ease;
+}
+
+.key:hover {
+  background-color: #fb2d8d;
 }
 
 kbd {
