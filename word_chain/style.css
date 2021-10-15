@@ -1,0 +1,30 @@
+body {
+  font-size: 1.5rem;
+  background: linear-gradient(#606c88, #3f4c6b);
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+header {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.game {
+  border: 1px solid white;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.participant {
+  margin-bottom: 1rem;
+  color: rgb(238, 218, 103);
+  font-weight: 600;
+}
