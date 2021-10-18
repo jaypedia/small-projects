@@ -22,7 +22,7 @@ function onAdd() {
   // 3. items 컨테이너 안에 새로 만든 아이템을 추가한다.
   items.appendChild(item);
   // 새로 추가된 "아이템"으로 스크롤링
-  item.scrollIntoView({ block: 'end' });
+  item.scrollIntoView({ behavior: 'smooth' });
   // 4. input을 초기화한다. + Focusing
   input.value = '';
   input.focus();
@@ -56,7 +56,7 @@ function createItem(text) {
 }
 
 function allClear() {
-  // const itemRow = document.querySelectorAll('li');
+  // const itemRow = document.querySelectorAll('li'); (X)
   if (!confirm('All Clear?')) return;
   items.innerHTML = '';
 }

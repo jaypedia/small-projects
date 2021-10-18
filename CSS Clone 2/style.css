@@ -18,6 +18,7 @@ body {
     'header header header' 1fr
     'sec1 sec1 aside' 3.7fr
     'sec2 sec2 sec2' 3.3fr / 0.8fr 1.3fr 1fr;
+  gap: 15px;
 }
 
 header {
@@ -27,7 +28,6 @@ header {
   display: grid;
   grid-template-columns: 0.8fr 1.3fr 1fr;
   padding: 10px;
-  margin: 10px 10px 0px 10px;
   align-items: end;
 }
 
@@ -39,7 +39,6 @@ header {
 .sec1 {
   grid-area: sec1;
   background-color: #f14011;
-  margin: 10px;
   position: relative;
 }
 
@@ -52,7 +51,6 @@ header {
 .sec2 {
   grid-area: sec2;
   background-color: #f14011;
-  margin: 0px 10px 10px 10px;
   position: relative;
 }
 
@@ -65,7 +63,6 @@ header {
 aside {
   background-color: #f14011;
   grid-area: aside;
-  margin: 10px 10px 10px 0;
 }
 
 .sec2 .subtitle {

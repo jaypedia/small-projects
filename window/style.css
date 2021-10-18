@@ -29,5 +29,6 @@ p {
 @media screen and (max-width: 800px) {
   body {
     font-size: 25px;
+    background: linear-gradient(#e35d5b, #e53935);
   }
 }

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New year's Fortune</title>
+    <meta property="og:title" content="New year's Fortune" />
+    <meta
+      property="og:description"
+      content="12 Aminals will tell your fortune!"
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.econonews.co.kr/news/photo/202012/148308_98863_4329.jpg"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://new-year.spartacodingclub.kr/images/favicon.png"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+
+      :root {
+        --text-color: #ffffff;
+        --point-color: #34093a;
+      }
+
+      html {
+        width: 100%;
+        height: 100%;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Orbitron', sans-serif;
+        background: linear-gradient(#360033, #0b8793);
+        margin: 0;
+        padding: 30px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      header {
+        color: var(--text-color);
+        text-align: center;
+      }
+
+      header > .title {
+        font-size: 56px;
+        margin: 0;
+      }
+
+      .animals {
+        display: flex;
+        justify-content: center;
+        max-width: 1100px;
+        margin: auto;
+        flex-wrap: wrap;
+      }
+
+      .animals > a {
+        width: 150px;
+        height: 150px;
+        border-radius: 150px;
+        border: 3px solid var(--point-color);
+        background-color: white;
+        margin: 10px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 12px;
+        color: var(--text-color);
+        box-shadow: 0px 0px 10px 0px var(--point-color);
+        background-size: cover;
+        background-position: center;
+        transition: all 200ms ease-in;
+      }
+
+      .animals > a:hover {
+        background-color: var(--point-color);
+      }
+
+      @media screen and (max-width: 780px) {
+        .animals {
+          width: 100%;
+        }
+
+        .title {
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+
+        .animals > a {
+          color: darkred;
+        }
+      }
+
+      .animal1 {
+        background-image: url('https://new-year.spartacodingclub.kr/images/yearS1.png');
+      }
+      .animal2 {
+        background-image: url('https://new-year.spartacodingclub.kr/images/yearS2.png');
+      }
+      .animal3 {
+        background-image: url('https://new-year.spartacodingclub.kr/images/yearS3.png');
+      }
+      .animal4 {
+        background-image: url('https://new-year.spartacodingclub.kr/images/yearS4.png');
+      }
+      .animal5 {
+        background-image: url('https://new-year.spartacodingclub.kr/images/yearS5.png');
+      }
+      .animal6 {
+        background-image: url('https://new-year.spartacodingclub.kr/images/yearS6.png');
+      }
+      .animal7 {
+        background-image: url('https://new-year.spartacodingclub.kr/images/yearS7.png');
+      }
+      .animal8 {
+        background-image: url('https://new-year.spartacodingclub.kr/images/yearS8.png');
+      }
+      .animal9 {
+        background-image: url('https://new-year.spartacodingclub.kr/images/yearS9.png');
+      }
+      .animal10 {
+        background-image: url('https://new-year.spartacodingclub.kr/images/yearS10.png');
+      }
+      .animal11 {
+        background-image: url('https://new-year.spartacodingclub.kr/images/yearS11.png');
+      }
+      .animal12 {
+        background-image: url('https://new-year.spartacodingclub.kr/images/yearS12.png');
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="title">New year's Fortune</h1>
+      <h2 class="subtitle">12 Animals will tell your fortune🎊</h2>
+    </header>
+    <div class="animals">
+      <a class="animal1" href="result.html?year=1">Mouse</a>
+      <a class="animal2" href="result.html?year=2">Cow</a>
+      <a class="animal3" href="result.html?year=3">Tiger</a>
+      <a class="animal4" href="result.html?year=4">Rabbit</a>
+      <a class="animal5" href="result.html?year=5">Dragon</a>
+      <a class="animal6" href="result.html?year=6">Snake</a>
+      <a class="animal7" href="result.html?year=7">Horse</a>
+      <a class="animal8" href="result.html?year=8">Sheep</a>
+      <a class="animal9" href="result.html?year=9">Monkey</a>
+      <a class="animal10" href="result.html?year=10">Chicken</a>
+      <a class="animal11" href="result.html?year=11">Dog</a>
+      <a class="animal12" href="result.html?year=12">Pig</a>
+    </div>
+    <script>
+      const backBtn = document.querySelector('.btn-back');
+      const shareBtn = document.querySelector('.btn-share');
+      const animalName = document.querySelector('.animal-name');
+      const resultTitle = document.querySelector('.result-title');
+
+      const url = window.location.href;
+
+      function backToMain() {
+        const newUrl = url.split('result.html')[0] + 'index.html';
+        window.location.href = newUrl;
+      }
+
+      function shareAddress() {
+        const textArea = document.createElement('textarea');
+        document.body.appendChild(textArea);
+        textArea.value = url;
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        alert('Copied!');
+      }
+
+      function loadItems() {
+        let animals = [
+          '쥐띠',
+          '소띠',
+          '호랑이띠',
+          '토끼띠',
+          '용띠',
+          '뱀띠',
+          '말띠',
+          '양띠',
+          '원숭이띠',
+          '닭띠',
+          '개띠',
+          '돼지띠',
+        ];
+        let year = getParameter('year') == '' ? 1 : getParameter('year');
+        console.log(`year : ${year}`);
+        let id = `rtan${year}`;
+        let animal = animals[year - 1];
+        document.getElementById(id).style.display = 'block';
+        animalName.innerHTML = animal;
+        animalName.style.backgroundImage = `url("https://new-year.spartacodingclub.kr/images/yearS${year}.png")`;
+        resultTitle.innerHTML = `2021년 ${animal}의 운세!`;
+      }
+
+      function getParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        let regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        // console.log(`regex : ${regex}`); // /[\?&]year=([^&#]*)/
+        let results = regex.exec(location.search);
+        //console.log(results); // results : ['?year=7', '7', index: 0, input: '?year=7', groups: undefined]
+        return results === null
+          ? ''
+          : decodeURIComponent(results[1].replace(/\+/g, ' '));
+      }
+
+      backBtn.addEventListener('click', backToMain);
+      shareBtn.addEventListener('click', shareAddress);
+      document.addEventListener('DOMContentLoaded', loadItems);
+    </script>
+  </body>
+</html>

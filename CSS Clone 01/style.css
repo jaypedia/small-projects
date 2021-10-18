@@ -10,9 +10,9 @@ body {
   margin: 0 auto;
 }
 
-.paper {
+.content-wrap {
   background-color: #f3f4f1;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 18px 1px 5px #dfded5, -10px -4px 5px #fcfeff;
   padding: 20px;
   width: 550px;
   height: 800px;
@@ -21,26 +21,20 @@ body {
 
 .title {
   position: relative;
+  border-bottom: 1px solid black;
 }
 
-.title h1 {
+.title-h1 {
   font-size: 100px;
   font-weight: 700;
 }
 
-.title h3 {
+.title-month {
   font-size: 50px;
   font-weight: 700;
   position: absolute;
   top: 45px;
   right: 5px;
-}
-
-.line {
-  height: 2px;
-  width: 100%;
-  background-color: black;
-  margin: 5px;
 }
 
 .text-box {

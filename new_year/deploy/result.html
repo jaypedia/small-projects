@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New year's Fortune</title>
+    <meta property="og:title" content="New year's Fortune" />
+    <meta
+      property="og:description"
+      content="12 Aminals will tell your fortune!"
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.econonews.co.kr/news/photo/202012/148308_98863_4329.jpg"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://new-year.spartacodingclub.kr/images/favicon.png"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+
+      :root {
+        --text-color: #ffffff;
+        --point-color: #34093a;
+      }
+
+      html {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        font-family: 'Orbitron', sans-serif;
+        background: linear-gradient(#0b8793, #360033);
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        color: var(--text-color);
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 50px;
+      }
+
+      header > .title {
+        font-size: 56px;
+        margin: 0;
+      }
+
+      .animal-name {
+        width: 200px;
+        height: 200px;
+        background-color: var(--point-color);
+        border: 4px solid var(--point-color);
+        border-radius: 200px;
+        box-shadow: 0px 0px 10px 0px var(--point-color);
+        color: var(--text-color);
+        font-size: 32px;
+        text-align: center;
+        background-size: cover;
+        background-position: center;
+        margin: 80px auto 50px auto;
+      }
+
+      .msg {
+        color: var(--text-color);
+        text-align: center;
+        font-size: 32px;
+        line-height: 48px;
+        display: none;
+      }
+
+      .btns {
+        display: flex;
+        justify-content: center;
+      }
+
+      .btn-back {
+        width: 150px;
+        height: 50px;
+        font-family: 'Orbitron', sans-serif;
+        text-transform: uppercase;
+        color: var(--point-color);
+        border: 2px solid var(--point-color);
+        background-color: white;
+        border-radius: 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .btn-back:hover {
+        background-color: var(--point-color);
+      }
+
+      .btn-share {
+        font-family: 'Orbitron', sans-serif;
+        width: 150px;
+        height: 50px;
+        text-transform: uppercase;
+        color: var(--text-color);
+        border: 2px solid var(--point-color);
+        background-color: var(--point-color);
+        border-radius: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        margin-left: 5px;
+      }
+
+      .btn-share:hover {
+        background-color: white;
+      }
+
+      .result-title {
+        margin: 0;
+      }
+
+      @media screen and (max-width: 780px) {
+        .msg {
+          font-size: 24px;
+          line-height: 36px;
+          margin-bottom: 36px;
+          padding: 10px;
+        }
+
+        .msg > br {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="result-title">Mouse says your fortune!</h1>
+    </header>
+    <div class="animal-name">Mouse</div>
+    <p class="msg" id="rtan1" aria-label="쥐띠">
+      마음을 알아주는 따뜻한 사람을 만날 것이야!<br />
+      일이 잘 안 풀리는 것 같아도<br />
+      연말에는 호탕하게 웃을 수 있을 지어니<br />
+      너무 걱정하지 말고 하루하루 잘 나아가봐~
+    </p>
+    <p class="msg" id="rtan2" aria-label="소띠">
+      올해 큰 돈이 들어올 것 같은데?<br />
+      어디든 투자하고 싶은 곳이 있으면<br />
+      자신 있게 해봐도 좋을 것 같아!<br />
+      너무 무리는 하지 말구!
+    </p>
+    <p class="msg" id="rtan3" aria-label="호랑이띠">
+      주변 사람들로부터 많은 도움을 받는<br />
+      한 해가 되겠구만!<br />
+      오랜 지인들에게 미리 연락을 해보는 건 어떨까?<br />
+      지금 전화기를 들어봐!
+    </p>
+    <p class="msg" id="rtan4" aria-label="토끼띠">
+      취업운이 특히 좋은 한 해야!<br />
+      승진, 이직, 취직 모두 다 잘 되겠는 걸?<br />
+      꼭 하고 싶은 일이 있었으면<br />
+      주저 말고 도전해봐!
+    </p>
+    <p class="msg" id="rtan5" aria-label="용띠">
+      가까운 친구나 가족에게 좋은 일이 생기는 한 해구만!<br />
+      컨디션도 좋고 준비하는 일 모두 좋은 결과를 얻을거야~<br />
+      망설이지 말고!<br />
+      앞으로 나아가봐~!
+    </p>
+    <p class="msg" id="rtan6" aria-label="뱀띠">
+      봄날에 선선하게 부는 바람처럼<br />
+      올해는 무난~하게 지나가겠어!<br />
+      너무 조바심 갖지 말고, 마음 편안히 먹고<br />
+      한 걸음 한 걸음 나아가자!
+    </p>
+    <p class="msg" id="rtan7" aria-label="말띠">
+      긍정적인 마음으로 천천히 일을 추진해봐!<br />
+      어려울 땐, 주변의 도움을 받아보는 것도 좋겠어~<br />
+      하루하루 성실히 보내다보면,<br />
+      반드시 바라던 일이 이루어질거야!
+    </p>
+    <p class="msg" id="rtan8" aria-label="양띠">
+      모처럼 컨디션이 최상인 해!<br />
+      새해 다짐으로 운동을 시작하면 어떨까?<br />
+      달리기, 헬스트레이닝, 요가 .. 뭐든 좋아!<br />
+      기분 좋고 에너지 넘칠 일만 있을거야!
+    </p>
+    <p class="msg" id="rtan9" aria-label="원숭이띠">
+      미래에 대한 고민이 많은 해가 될거야!<br />
+      자기계발도 틈틈히 잊지말고,<br />
+      기회가 왔을 땐 주저말고 잡도록해!<br />
+      또 어떤 재밌는 인생이 펼쳐질지 모르니까!
+    </p>
+    <p class="msg" id="rtan10" aria-label="닭띠">
+      고생 끝에 낙이 온다라는 말,<br />
+      올해를 두고 하는 얘기일까?<br />
+      오랫동안 준비해온 일이 있다면<br />
+      드디어 결실을 맺는 한 해가 될거야!
+    </p>
+    <p class="msg" id="rtan11" aria-label="개띠">
+      올해 분위기가 심상치 않아.<br />
+      좋은 것만 먹고, 운동도 좀 더 하고!<br />
+      건강에 특히 신경 쓰는 한 해가 되도록 해!
+    </p>
+    <p class="msg" id="rtan12" aria-label="돼지띠">
+      새로운 인연을 아주 많이 만나는 해가 될 것 같은데?<br />
+      그 중에 평생 도움 받을 귀인이 있으니,<br />
+      만나는 모든 사람들에게 친절하고,<br />
+      따뜻하게 다가가봐!
+    </p>
+    <div class="btns">
+      <button class="btn-back">back</button>
+      <button class="btn-share">share</button>
+    </div>
+    <script>
+      const backBtn = document.querySelector('.btn-back');
+      const shareBtn = document.querySelector('.btn-share');
+      const animalName = document.querySelector('.animal-name');
+      const resultTitle = document.querySelector('.result-title');
+
+      const url = window.location.href;
+
+      function backToMain() {
+        const newUrl = url.split('result.html')[0] + 'index.html';
+        window.location.href = newUrl;
+      }
+
+      function shareAddress() {
+        const textArea = document.createElement('textarea');
+        document.body.appendChild(textArea);
+        textArea.value = url;
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        alert('Copied!');
+      }
+
+      function loadItems() {
+        let animals = [
+          '쥐띠',
+          '소띠',
+          '호랑이띠',
+          '토끼띠',
+          '용띠',
+          '뱀띠',
+          '말띠',
+          '양띠',
+          '원숭이띠',
+          '닭띠',
+          '개띠',
+          '돼지띠',
+        ];
+        let year = getParameter('year') == '' ? 1 : getParameter('year');
+        console.log(`year : ${year}`);
+        let id = `rtan${year}`;
+        let animal = animals[year - 1];
+        document.getElementById(id).style.display = 'block';
+        animalName.innerHTML = animal;
+        animalName.style.backgroundImage = `url("https://new-year.spartacodingclub.kr/images/yearS${year}.png")`;
+        resultTitle.innerHTML = `2021년 ${animal}의 운세!`;
+      }
+
+      function getParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        let regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        // console.log(`regex : ${regex}`); // /[\?&]year=([^&#]*)/
+        let results = regex.exec(location.search);
+        //console.log(results); // results : ['?year=7', '7', index: 0, input: '?year=7', groups: undefined]
+        return results === null
+          ? ''
+          : decodeURIComponent(results[1].replace(/\+/g, ' '));
+      }
+
+      backBtn.addEventListener('click', backToMain);
+      shareBtn.addEventListener('click', shareAddress);
+      document.addEventListener('DOMContentLoaded', loadItems);
+    </script>
+  </body>
+</html>
