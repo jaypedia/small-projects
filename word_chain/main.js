@@ -9,7 +9,7 @@ let word;
 let newWord;
 
 const onClickButton = () => {
-  if (!word) {
+  if (!word || word[word.length - 1] === newWord[0]) {
     word = newWord;
     $word.textContent = word;
     $input.value = '';
@@ -17,18 +17,9 @@ const onClickButton = () => {
     $order.textContent =
       +$order.textContent + 1 > number ? 1 : +$order.textContent + 1;
   } else {
-    if (word[word.length - 1] === newWord[0]) {
-      word = newWord;
-      $word.textContent = word;
-      $input.value = '';
-      $input.focus();
-      $order.textContent =
-        +$order.textContent + 1 > number ? 1 : +$order.textContent + 1;
-    } else {
-      $participant.textContent += ' Failed!';
-      $participant.style.color = 'red';
-      $word.style.color = 'red';
-    }
+    $participant.textContent += ' Failed!';
+    $participant.style.color = 'red';
+    $word.style.color = 'red';
   }
 };
 
