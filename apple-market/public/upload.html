@@ -46,7 +46,23 @@
         </div>
       </div>
     </nav>
-    <div class="container mt-3"></div>
+    <div class="container mt-3">
+      <input
+        type="text"
+        class="form-control mt-2"
+        id="title"
+        placeholder="title"
+      />
+      <textarea class="form-control mt-2" id="content"></textarea>
+      <input
+        type="text"
+        class="form-control mt-2"
+        id="price"
+        placeholder="price"
+      />
+      <input class="form-control mt-2" type="file" id="image" />
+      <button class="btn btn-danger mt-3 uploadBtn" id="send">Post</button>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -76,24 +92,37 @@
     ></script>
     <script>
       const db = firebase.firestore();
-      db.collection('product')
-        .get()
-        .then(result => {
-          result.forEach(doc => {
-            // console.log(doc.data());
-            const data = doc.data();
-            const template = ` <div class="product">
-         <div class="thumbnail" style="background-image: url('https://via.placeholder.com/350')"></div>
-         <div class="flex-grow-1 p-4">
-              <h5 class="title">${data.title}</h5>
-               <p class="date">2030년 1월 8일</p>
-               <p class="price">${data.price}원</p>
-               <p class="float-end">🤍0</p>
-         </div>
-        </div>`;
-            $('.container').append(template);
+      const storage = firebase.storage();
+
+      const uploadBtn = document.querySelector('.uploadBtn');
+      const title = document.querySelector('#title');
+      const content = document.querySelector('#content');
+      const price = document.querySelector('#price');
+      const imageInput = document.querySelector('#image');
+
+      uploadBtn.addEventListener('click', () => {
+        const item = {
+          title: title.value,
+          content: content.value,
+          price: Number(price.value),
+          data: new Date(),
+        };
+
+        const myImage = imageInput.files[0];
+        const storageRef = storage.ref();
+        const savePath = storageRef.child('image/' + myImage.name);
+        const upload = savePath.put(myImage);
+
+        db.collection('product')
+          .add(item)
+          .then(result => {
+            console.log(result);
+            window.location.href = '/index.html';
+          })
+          .catch(err => {
+            console.log(err);
           });
-        });
+      });
     </script>
   </body>
 </html>
