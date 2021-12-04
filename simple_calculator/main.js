@@ -81,9 +81,14 @@ operatorBtns.forEach(btn => {
     if (!numOne) {
       alert('숫자를 먼저 입력해 주세요.');
       return;
-    } else {
-      operator = btn.textContent;
-      displayOperator(operator);
+    }
+    operator = btn.textContent;
+    displayOperator(operator);
+    if (numTwo) {
+      const result = calculate(numOne, numTwo, operator);
+      displayNumber(result);
+      numOne = result;
+      numTwo = '';
     }
   });
 });
@@ -97,7 +102,8 @@ equalBtn.addEventListener('click', () => {
   displayNumber(result);
   operator = null;
   displayOperator(operator);
-  initCalculator();
+  numOne = result;
+  numTwo = '';
 });
 
 clearBtn.addEventListener('click', () => {
