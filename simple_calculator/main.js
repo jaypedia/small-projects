@@ -82,13 +82,24 @@ operatorBtns.forEach(btn => {
       alert('숫자를 먼저 입력해 주세요.');
       return;
     }
-    operator = btn.textContent;
-    displayOperator(operator);
+    if (numOne && !numTwo) {
+      operator = btn.textContent;
+      displayOperator(operator);
+      return;
+    }
+    // 연속 계산을 위한 로직
+    // 연산자 버튼을 클릭했는데, numTwo가 있는 상황이라면
     if (numTwo) {
+      // operator = btn.textContent;
+      // displayOperator(operator);
+      // 우선 계산을 해서 결과를 보여준다.
       const result = calculate(numOne, numTwo, operator);
       displayNumber(result);
+      // numOne에 결과가 들어가고, numTwo는 비워 준다.(새로 입력 받아야 하니까)
       numOne = result;
       numTwo = '';
+      operator = btn.textContent;
+      displayOperator(operator);
     }
   });
 });
