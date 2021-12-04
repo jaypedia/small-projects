@@ -15,8 +15,6 @@ function saveNumbers(number) {
   } else {
     numTwo = number;
   }
-  console.log(numOne);
-  console.log(numTwo);
 }
 
 function displayNumber(number) {
@@ -31,6 +29,36 @@ function makeNumOne(number) {
 function makeNumTwo(number) {
   numTwo += number;
   return numTwo;
+}
+
+function calculate(numOne, numTwo, operator) {
+  numOne = Number(numOne);
+  numTwo = Number(numTwo);
+  switch (operator) {
+    case '+':
+      return numOne + numTwo;
+    case '-':
+      return numOne - numTwo;
+    case '/':
+      return numOne / numTwo;
+    case 'x':
+      return numOne * numTwo;
+  }
+}
+
+function displayOperator(operator) {
+  operatorDisplay.value = operator;
+}
+
+function clearDisplay() {
+  resultDisplay.value = '';
+  operatorDisplay.value = '';
+}
+
+function initCalculator() {
+  numOne = '';
+  numTwo = '';
+  operator = null;
 }
 
 numberBtns.forEach(btn => {
@@ -48,10 +76,6 @@ numberBtns.forEach(btn => {
   });
 });
 
-function displayOperator(operator) {
-  operatorDisplay.value = operator;
-}
-
 operatorBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     if (!numOne) {
@@ -59,34 +83,24 @@ operatorBtns.forEach(btn => {
       return;
     } else {
       operator = btn.textContent;
-      console.log(operator);
       displayOperator(operator);
     }
   });
 });
 
-function calculate(numOne, numTwo, operator) {
-  numOne = Number(numOne);
-  numTwo = Number(numTwo);
-  switch (operator) {
-    case '+':
-      return numOne + numTwo;
-    case '-':
-      return numOne - numTwo;
-    case '/':
-      return numOne / numTwo;
-    case 'x':
-      return numOne * numTwo;
-  }
-}
-
 equalBtn.addEventListener('click', () => {
   if (!numOne || !numTwo || !operator) {
-    alert('숫자나 연산자를 입력해 주세요.');
+    alert('숫자나 연산자를 입력해야 계산할 수 있어요.');
     return;
   }
   const result = calculate(numOne, numTwo, operator);
   displayNumber(result);
   operator = null;
   displayOperator(operator);
+  initCalculator();
+});
+
+clearBtn.addEventListener('click', () => {
+  clearDisplay();
+  initCalculator();
 });

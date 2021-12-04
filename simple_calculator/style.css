@@ -39,6 +39,8 @@ body {
 }
 
 input {
+  font-family: 'NeoDunggeunmo';
+
   height: 100px;
   border-radius: 2rem;
   background-color: #8fd027;
