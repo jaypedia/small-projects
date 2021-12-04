@@ -78,15 +78,24 @@ numberBtns.forEach(btn => {
 
 operatorBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    if (!numOne) {
+    // 첫 번째 숫자가 -로 시작할 때(음수일 때)
+    if (btn.textContent === '-' && numOne === '') {
+      numOne += '-';
+      displayNumber(numOne);
+    }
+
+    if (!numOne && btn.textContent !== '-') {
       alert('숫자를 먼저 입력해 주세요.');
       return;
     }
-    if (numOne && !numTwo) {
+
+    // 첫 번째 숫자는 있는데(단 -가 아니어야 함), 두 번째 숫자가 없을 때
+    if (numOne && numOne !== '-' && !numTwo) {
       operator = btn.textContent;
       displayOperator(operator);
       return;
     }
+
     // 연속 계산을 위한 로직
     // 연산자 버튼을 클릭했는데, numTwo가 있는 상황이라면
     if (numTwo) {
