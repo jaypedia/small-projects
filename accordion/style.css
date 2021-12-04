@@ -1,0 +1,269 @@
+:root {
+  --color-black: #000000;
+}
+
+* {
+  /* margin: 1px;
+  border: 1px; */
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  background-color: #810a0a;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+h2 {
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+}
+.accordion_container {
+  background: #000000;
+  padding: 20px;
+  /* border: 1px solid rgb(251, 251, 251); */
+  max-width: 720px;
+  margin: 5px auto;
+  border-radius: 10px;
+  box-shadow: 0 15px 18px rgba(0, 0, 0, 0.34);
+}
+/* .accordion_container:first-of-type {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.accordion_container:last-of-type {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom: none;
+} */
+.accordion-label {
+  cursor: pointer;
+  display: block;
+  user-select: none;
+  color: #fff;
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s;
+  background-size: 260px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+}
+.accordion-control {
+  display: none;
+}
+.accordion-control + label:before {
+  left: -19px;
+  top: 3px;
+  width: 10px;
+  height: 10px;
+  /* border-radius: 50%; */
+  border-style: solid;
+  /* border-width: 10px 0 10px 16px; */
+  /* border-width: 5px 5px 5px 5px; */
+  /* border-color: transparent transparent transparent #fff; */
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: none;
+  border-left: 10px solid #fff;
+  transition: all 0.25 ease-in;
+}
+.accordion-control:checked + label:before {
+  transform: rotate(90deg);
+}
+.accordion-control:checked + label:after {
+  content: attr(data-label-open);
+}
+.accordion-control + label:after {
+  content: attr(data-label-closed);
+  padding-left: 4px;
+}
+.accordion-control:checked + label + .accordion-content {
+  max-height: 50px;
+}
+.accordion-control[type='radio'] + label:before,
+accordion-control[type='radio'] + label:after {
+  content: '';
+}
+.accordion-control[type='radio']:checked + label:before {
+  border-left-color: #999;
+}
+
+/* .story_container input{
+    height: 30px;
+    margin: 0 5px;
+    border: 1px solid #909090;
+    padding: 0 10px;
+    outline: 0;
+    max-width: 320px;
+} */
+.textarea_title {
+  border: 2px solid #fff;
+  border-radius: 10px;
+  height: 50px;
+  /* width: 200px; */
+}
+.textarea_contents {
+  border: 2px solid #fff;
+  border-radius: 10px;
+  height: 50px;
+  /* width: 200px; */
+}
+.story_container {
+  /* background-color: #dabfde;
+    color: #fff;
+    display: block;
+    font-size: 1em;
+    line-height: 1em;
+    margin-bottom: 1em;
+    padding: 0 1em;
+    border-radius: .4em;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    min-width: 4em;
+    margin: 30px 10px;
+    padding: 20px;
+    border-bottom: 1px solid #fff;
+    max-width: 720px;
+    margin: 0 auto; */
+
+  background: #000000;
+  padding: 20px;
+  /* border-bottom: 1px solid #fff; */
+  max-width: 720px;
+  margin: 0 auto;
+  box-shadow: 0 15px 18px rgba(0, 0, 0, 0.34);
+
+  /* target the "container" class that is the wrapper for the content
+    Set 0 value for the max-height property and keep the overflow hidden
+    in order to hide the content by default. Similarly, define the transition,
+    background, and color as described below: */
+
+  /* max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s;
+    background-size: 260px;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff; */
+}
+
+.story_container {
+  border-radius: 10px;
+  margin: 10px;
+}
+
+/* .story_container:first-of-type {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.story_container:last-of-type {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom: none;
+} */
+.story_title_label {
+  cursor: pointer;
+  display: block;
+  user-select: none;
+  color: #fff;
+}
+.story_content_div {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s;
+  background-size: 260px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+}
+.story_input {
+  display: none;
+}
+.story_input + label:before {
+  left: -19px;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 16px;
+  border-color: transparent transparent transparent #fff;
+  transition: all 0.25 ease-in;
+}
+
+.story_input:checked + label:before {
+  transform: rotate(90deg);
+}
+
+.story_input:checked + label:after {
+  /* The attr() CSS function is used to retrieve 
+    the value of an attribute of the selected element and 
+    use it in the stylesheet. */
+  content: attr(data-label-open);
+}
+.story_input + label:after {
+  content: attr(data-label-closed);
+  padding-left: 4px;
+}
+
+.story_input:checked + label + .story_content_div {
+  max-height: 50px;
+}
+.story_input[type='radio'] + label:before,
+story_input[type='radio'] + label:after {
+  content: '';
+}
+/* .story_input[type=radio]:checked + label{
+    cursor: default;
+} */
+.story_input[type='radio']:checked + label:before {
+  border-left-color: #999;
+}
+/* fieldset {
+    border: none;
+    padding: 0;
+} */
+
+.input_class {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 600px;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px;
+}
+
+input {
+  width: 500px;
+  margin: 5px;
+}
+
+.add-btn {
+  color: white;
+  font-weight: 700;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.add-btn:hover {
+  background: red;
+}

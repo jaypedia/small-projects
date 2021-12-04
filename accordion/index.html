@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+
+  <body>
+    <div class="story_group_container">
+      <div class="story_container">
+        <h2 class="headline_class">Two Sentences Horror Stories</h2>
+        <div class="input_class">
+          <input
+            class="textarea_title"
+            id="story_title"
+            placeholder="Title"
+          ></input>
+          <input
+            class="textarea_contents"
+            id="story_content"
+            placeholder="Content"
+          ></input>
+          <button class="add-btn" id="story_add_button">ADD</button>
+        </div>
+      </div>
+
+      <!-- <div class="story_container"> -->
+      <div>
+        <div class="accordion_container">
+          <input
+            type="radio"
+            name="accordiongroup"
+            id="accordiongroup-1"
+            class="accordion-control"
+          />
+          <label for="accordiongroup-1" class="accordion-label"
+            >"우와 자느라 몰랐는데 벌써 수족관이에요?"</label
+          >
+          <div class="accordion-content content-1">
+            아이에게 우리가 아직 차에서 내리지 않았다는 것을 어떻게 설명해 줘야
+            할까요.
+          </div>
+        </div>
+        <div class="accordion_container">
+          <input
+            type="radio"
+            name="accordiongroup"
+            id="accordiongroup-2"
+            class="accordion-control"
+          />
+          <label for="accordiongroup-2" class="accordion-label">
+            우리 한살짜리 아기가 오늘 예상치못하게 처음으로 문장을 말했어.
+          </label>
+          <div class="accordion-content content-2">
+            "뺑소니에서 도망칠 수 있을거라 생각했어, 그렉?"
+          </div>
+        </div>
+        <div class="accordion_container">
+          <input
+            type="radio"
+            name="accordiongroup"
+            id="accordiongroup-3"
+            class="accordion-control"
+          />
+          <label for="accordiongroup-3" class="accordion-label"
+            >Accordion group - Title 3</label
+          >
+          <div class="accordion-content content-3">
+            This is collapsible content 3 <br /><br /><br />
+          </div>
+        </div>
+        <div class="stories_class" id="stories_id"></div>
+
+        <div id="story_last"></div>
+      </div>
+
+      <!-- </div> -->
+    </div>
+  </body>
+</html>
