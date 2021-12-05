@@ -4,6 +4,7 @@ const $tryBtn = document.querySelector('.try-button');
 const $logs = document.querySelector('.logs');
 
 const NUMBER = 4;
+const NUMBER_OF_ATTEMPTS = 10;
 
 // 무작위로 1~9 사이에서 중복되지 않게 숫자 4개 뽑기
 function getRandomNumbers() {
@@ -95,21 +96,65 @@ function clearInput() {
   $input.value = '';
 }
 
+// 숫자만 맞으면 볼
+// 순서 + 숫자 맞추면 스트라이크
+function tellBallAndStrike(userInput) {
+  const answerArr = answer.split('');
+  const inputArr = userInput.split('');
+
+  let ball = 0;
+  let strike = 0;
+
+  for (let i = 0; i < answerArr.length; i++) {
+    if (answerArr[i] === inputArr[i]) {
+      strike++;
+    }
+    for (let j = 0; j < inputArr.length; j++) {
+      if (answerArr[i] !== inputArr[i] && answerArr[i] === inputArr[j]) {
+        ball++;
+      }
+    }
+  }
+
+  /*
+  // 이중 for문이 아닌, indexOf를 이용하는 방법
+  // 어떤 수의 인덱스가 존재하는지 여부를 가지고 판단할 수 있음
+  for (let i = 0; i < answerArr.length; i++) {
+    const index = inputArr.indexOf(answerArr[i]);
+    if (index > -1) {
+      if (index === i) {
+        strike++;
+      } else {
+        ball++;
+      }
+    }
+  }
+  */
+
+  $logs.append(
+    `My try : ${userInput} / BALL : ${ball} / STRIKE : ${strike} `,
+    document.createElement('br')
+  );
+}
+
 $form.addEventListener('submit', e => {
   e.preventDefault();
+  const userInput = $input.value;
   if (!checkUserInput()) return;
 
-  if ($input.value === answer) {
+  if (userInput === answer) {
     clearInput();
     $logs.textContent = '홈런@@@@@';
     return;
   }
 
-  tries.push($input.value);
+  tellBallAndStrike(userInput);
+
+  tries.push(userInput);
   console.log(tries);
   clearInput();
 
-  if (tries.length >= 3) {
+  if (tries.length >= NUMBER_OF_ATTEMPTS) {
     const failMessage = document.createTextNode(
       `실패! 정답은 ${answer}입니다.`
     );
