@@ -98,6 +98,7 @@ function clearInput() {
 
 // 숫자만 맞으면 볼
 // 순서 + 숫자 맞추면 스트라이크
+let outCount = 0;
 function tellBallAndStrike(userInput) {
   const answerArr = answer.split('');
   const inputArr = userInput.split('');
@@ -131,10 +132,26 @@ function tellBallAndStrike(userInput) {
   }
   */
 
-  $logs.append(
-    `My try : ${userInput} / BALL : ${ball} / STRIKE : ${strike} `,
-    document.createElement('br')
-  );
+  if (outCount === 2 && ball === 0 && strike === 0) {
+    const failMessage = document.createTextNode(
+      `3 OUT 실패! 정답은 ${answer}입니다.`
+    );
+    $logs.appendChild(failMessage);
+    return;
+  }
+
+  if (ball === 0 && strike === 0) {
+    ++outCount;
+    $logs.append(
+      `My try : ${userInput} / BALL : 0 / STRIKE : 0 / OUT${outCount}`,
+      document.createElement('br')
+    );
+  } else {
+    $logs.append(
+      `My try : ${userInput} / BALL : ${ball} / STRIKE : ${strike} `,
+      document.createElement('br')
+    );
+  }
 }
 
 $form.addEventListener('submit', e => {
