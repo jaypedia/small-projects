@@ -28,17 +28,56 @@ function getWinBalls() {
   return winBalls;
 }
 
-function getBonusBall() {
-  const bonusBall = getWinBalls()[6];
-  return bonusBall;
+// shuffle 배열 안에 있는 요소들을 앞에 있는 것부터 차례대로
+function startGame() {
+  const winBalls = getWinBalls();
+  console.log(winBalls);
+
+  // splice 때문에 array의 길이가 변경되므로 length를 변수에 저장
+  const len = winBalls.length;
+  for (let i = 0; i < len; i++) {
+    const resultBallArr = winBalls.splice(0, 1);
+    console.log(resultBallArr);
+
+    setTimeout(() => {
+      if (i === 6) {
+        createBall(bonus, resultBallArr);
+      } else {
+        createBall(result, resultBallArr);
+      }
+    }, 1000 * i);
+  }
 }
 
-// 뽑은 공 1초마다 1개씩 result에 붙여주기
+function createBall(place, resultBallArr) {
+  const ball = document.createElement('span');
+  const ballNumber = resultBallArr[0];
+  ball.className = 'ball';
+  ball.innerHTML = ballNumber;
+  paintBall(ballNumber, ball);
+  place.appendChild(ball);
+}
+
+function paintBall(ballNumber, ball) {
+  if (ballNumber < 10) {
+    ball.style.backgroundColor = 'red';
+  } else if (ballNumber < 20) {
+    ball.style.backgroundColor = 'yellow';
+  } else if (ballNumber < 30) {
+    ball.style.backgroundColor = 'green';
+    ball.style.color = 'white';
+  } else if (ballNumber < 40) {
+    ball.style.backgroundColor = 'blue';
+    ball.style.color = 'white';
+  } else {
+    ball.style.backgroundColor = 'pink';
+  }
+}
+
 const result = document.querySelector('.result');
 const bonus = document.querySelector('.bonus');
-
 const startBtn = document.querySelector('.start-button');
-const replayBtn = document.querySelector('.replay-button');
+const resetBtn = document.querySelector('.reset-button');
 
 startBtn.addEventListener('click', () => {
   startGame();
@@ -50,32 +89,3 @@ replayBtn.addEventListener('click', () => {
   bonus.remove();
 });
 */
-
-// shuffle 배열 안에 있는 요소들을 앞에 있는 것부터 차례대로
-function startGame() {
-  const winBalls = getWinBalls();
-
-  console.log(winBalls);
-
-  // splice 때문에 array의 길이가 변경되므로 length를 변수에 저장
-  const len = winBalls.length;
-  for (let i = 0; i < len; i++) {
-    const resultBallArr = winBalls.splice(0, 1);
-
-    console.log(resultBallArr);
-
-    setTimeout(() => {
-      if (i === 6) {
-        const ball = document.createElement('span');
-        ball.className = 'ball';
-        bonus.appendChild(ball);
-        ball.innerHTML = resultBallArr[0];
-      } else {
-        const ball = document.createElement('span');
-        ball.className = 'ball';
-        result.appendChild(ball);
-        ball.innerHTML = resultBallArr[0];
-      }
-    }, 1000 * i);
-  }
-}
