@@ -5,6 +5,7 @@ const $rock = document.querySelector('.rock');
 const $scissors = document.querySelector('.scissors');
 const $paper = document.querySelector('.paper');
 const $mention = document.querySelector('.mention');
+const $result = document.querySelector('.result');
 
 const IMG_URL = './rps.png';
 
@@ -51,6 +52,8 @@ const clickBtn = () => {
 
 // 컴퓨터의 선택과 나의 선택을 비교하여 점수를 계산해주는 함수
 let score = 0;
+let comWinCount = 0;
+let myWinCount = 0;
 const calculateScore = e => {
   const myChoice = e.target.className;
 
@@ -63,16 +66,27 @@ const calculateScore = e => {
   } else if ([-1, 2].includes(diff)) {
     $mention.textContent = '내가 이겼다!';
     score++;
+    myWinCount++;
   } else if ([1, -2].includes(diff)) {
     $mention.textContent = '내가 졌다!';
     score--;
+    comWinCount++;
   }
   $score.textContent = score;
 };
+
+function showResult() {
+  if (comWinCount >= 2) {
+    $result.textContent = '결과 : 컴퓨터 승!';
+  } else if (myWinCount >= 2) {
+    $result.textContent = '결과 : 나 승!';
+  }
+}
 
 // 버튼을 클릭하면 1초간 정지했다가 다시 돌아가도록 하기
 $btnContainer.addEventListener('click', e => {
   // console.log(e.target.className);
   clickBtn();
   calculateScore(e);
+  showResult();
 });
