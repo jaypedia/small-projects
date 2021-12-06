@@ -4,6 +4,7 @@ const $score = document.querySelector('.score');
 const $rock = document.querySelector('.rock');
 const $scissors = document.querySelector('.scissors');
 const $paper = document.querySelector('.paper');
+const $mention = document.querySelector('.mention');
 
 const IMG_URL = './rps.png';
 
@@ -11,6 +12,12 @@ const rpsX = {
   rock: '-220px',
   paper: '-440px',
   scissors: '0',
+};
+
+const scoreTable = {
+  rock: 0,
+  paper: -1,
+  scissors: 1,
 };
 
 let computerChoice = 'rock';
@@ -42,8 +49,30 @@ const clickBtn = () => {
   }
 };
 
+// 컴퓨터의 선택과 나의 선택을 비교하여 점수를 계산해주는 함수
+let score = 0;
+const calculateScore = e => {
+  const myChoice = e.target.className;
+
+  const comScore = scoreTable[computerChoice];
+  const myScore = scoreTable[myChoice];
+
+  const diff = myScore - comScore;
+  if (diff === 0) {
+    $mention.textContent = '비김!';
+  } else if ([-1, 2].includes(diff)) {
+    $mention.textContent = '내가 이겼다!';
+    score++;
+  } else if ([1, -2].includes(diff)) {
+    $mention.textContent = '내가 졌다!';
+    score--;
+  }
+  $score.textContent = score;
+};
+
 // 버튼을 클릭하면 1초간 정지했다가 다시 돌아가도록 하기
 $btnContainer.addEventListener('click', e => {
-  console.log(e.target.className);
+  // console.log(e.target.className);
   clickBtn();
+  calculateScore(e);
 });
