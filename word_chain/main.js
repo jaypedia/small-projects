@@ -8,7 +8,9 @@ const $startBtn = document.querySelector('.start-btn');
 let word;
 let newWord;
 
-function startGame() {
+const order = Number($order.textContent);
+
+function gameStart() {
   const number = Number(prompt('How many people?'));
   return number;
 }
@@ -17,12 +19,9 @@ function onClick(number) {
   if (!word || word[word.length - 1] === newWord[0]) {
     word = newWord;
     $word.textContent = word;
-    $order.textContent =
-      +$order.textContent + 1 > number ? 1 : +$order.textContent + 1;
+    $order.textContent = order + 1 > number ? 1 : order + 1;
   } else {
-    $participant.textContent += ' Failed!';
-    $participant.style.color = 'red';
-    $word.style.color = 'red';
+    gameStop($order.textContent);
   }
   $input.value = '';
   $input.focus();
@@ -32,6 +31,12 @@ function onInput(e) {
   newWord = e.target.value;
 }
 
-$startBtn.addEventListener('click', startGame);
+function gameStop(order) {
+  $participant.textContent = `Participant${order} Failed!`;
+  $participant.style.color = 'red';
+  $word.style.color = 'red';
+}
+
+$startBtn.addEventListener('click', gameStart);
 $input.addEventListener('input', onInput);
 $button.addEventListener('click', onClick);
