@@ -10,9 +10,47 @@ const $screen = document.querySelector('#screen');
 const $result = document.querySelector('#result');
 
 // * 클래스를 waiting(파랑), ready(빨강), now(초록)로 바꾸는 식으로 진행
-
 // * 색깔에 따른 메시지 변경
-// 빨강 : 초록색이 되면 클릭하세요
-// 초록 : 클릭하세요
+// 빨강 : 초록색이 되면 클릭하세요, 초록 : 클릭하세요
 
-$screen.addEventListener('click', () => {});
+// Scope를 감안하여 변수를 함수 바깥에 선언한다.
+let timer;
+let startTime;
+let clickTime;
+
+function changeColor() {
+  // 파란 화면을 클릭했을 경우
+  if ($screen.className === 'waiting') {
+    $screen.className = 'ready';
+    $screen.textContent = 'READY! 초록색이 되면 클릭하세요';
+    // 랜덤 초 후 초록 화면으로 변경
+    timer = setTimeout(() => {
+      $screen.className = 'now';
+      $screen.textContent = '클릭하세요!';
+      startTime = new Date(); // 첫 시간 재기
+    }, Math.floor(Math.random() * 1000) + 2000); // 2초에서 3초 사이의 랜덤한 밀리초
+
+    // 빨간 화면을 클릭했을 경우
+  } else if ($screen.className === 'ready') {
+    $screen.className = 'waiting';
+    $screen.textContent = '성급한 클릭이었네요.';
+    // setTimeout 없애주기
+    clearTimeout(timer);
+    $result.innerHTML = '';
+
+    // 초록 화면을 클릭했을 경우
+  } else if ($screen.className === 'now') {
+    $screen.className = 'waiting';
+    $screen.textContent = '클릭해서 시작하세요';
+    clickTime = new Date(); // 끝 시간 재기
+    // 시간 계산
+    const reactionSpeed = clickTime - startTime;
+    $result.innerHTML = `반응 시간은 :${reactionSpeed}ms `;
+  }
+}
+
+$screen.addEventListener('click', () => {
+  changeColor();
+});
+
+// className을 바꾸는 대신, classList의 add, replace, remove 메서드를 사용할 수도 있다.
