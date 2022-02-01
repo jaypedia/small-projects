@@ -39,6 +39,10 @@ function changeCompterChoice() {
 let intervalId = setInterval(changeCompterChoice, 50);
 let clickable = true;
 
+let score = 0;
+let comWinCount = 0;
+let myWinCount = 0;
+
 const clickBtn = () => {
   if (clickable) {
     clearInterval(intervalId);
@@ -51,9 +55,7 @@ const clickBtn = () => {
 };
 
 // 컴퓨터의 선택과 나의 선택을 비교하여 점수를 계산해주는 함수
-let score = 0;
-let comWinCount = 0;
-let myWinCount = 0;
+
 const calculateScore = e => {
   const myChoice = e.target.className;
 
