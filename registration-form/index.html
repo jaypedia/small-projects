@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <script
+      src="https://kit.fontawesome.com/8d0a3fd827.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <nav id="navbar">
+      <div class="navbar__logo">
+        <i class="fas fa-bars"></i>
+        <i class="far fa-moon"></i>
+        <a href="#">Jay's world</a>
+      </div>
+      <ul class="navbar__menu">
+        <li class="navbar__menu__item">About</li>
+        <li class="navbar__menu__item">Article</li>
+        <li class="navbar__menu__item">Community</li>
+      </ul>
+      <div class="search">
+        <label for="search"></label>
+        <input
+          type="text"
+          id="searchbar"
+          placeholder="Search anything!"
+          size="15"
+        />
+        <i class="fas fa-search"></i>
+      </div>
+    </nav>
+
+    <!-- REGISTRATION FORM -->
+
+    <section>
+      <form>
+        <h1>Registration Form</h1>
+        <hr />
+
+        <!-- NAME -->
+        <label for="firstname">First Name</label>
+        <input
+          type="text"
+          id="firstname"
+          name="firstname"
+          placeholder="Enter First name"
+          size="15"
+          required
+        />
+        <label for="lastname">Last Name</label>
+        <input
+          type="text"
+          id="lastname"
+          name="lastname"
+          placeholder="Enter Last Name"
+          size="15"
+        />
+        <label for="nickname">Nickname</label>
+        <input
+          type="text"
+          id="nickname"
+          name="nickname"
+          placeholder="Enter Nickname"
+          size="15"
+          required
+        />
+
+        <!-- GENDER -->
+        <div class="gender">
+          <label for="gender">Gender</label>
+          <!-- The radio group must share the same name to be treated as a group -->
+          <input type="radio" id="gender" value="Female" name="gender" />Female
+          <input type="radio" id="gender" value="Male" name="gender" />Male
+        </div>
+
+        <!-- PHONE -->
+        <label for="phone">Phone</label>
+        <div class="phone">
+          <input type="number" list="code" id="country_code" />
+          <datalist id="code">
+            <option>+82</option>
+            <option>+32</option>
+            <option>+1</option>
+            <option>+45</option>
+            <option>+372</option>
+            <option>+995</option>
+            <option>+36</option>
+            <option>+95</option>
+            <option>+31</option>
+            <option>+351</option>
+          </datalist>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            placeholder="Enter Phone Number"
+            required
+          />
+        </div>
+
+        <!-- EMAIL -->
+        <label for="email">E-mail</label>
+        <input
+          type="text"
+          id="email"
+          placeholder="Enter Email"
+          name="email"
+          required
+        />
+
+        <!-- PASSWORD -->
+        <label for="password">Password</label>
+        <input
+          type="text"
+          id="password"
+          placeholder="Enter Password"
+          name="password"
+          required
+        />
+
+        <!-- BUTTONS -->
+        <div class="button">
+          <button type="submit" value="submit">Submit</button>
+          <button type="reset" value="reset" id="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
