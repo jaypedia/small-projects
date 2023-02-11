@@ -1,0 +1,55 @@
+html {
+  background: url('./background.jpg') no-repeat;
+  background-size: cover;
+}
+
+body {
+  margin: 0;
+  color: white;
+  font-family: sans-serif;
+}
+
+.keys {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.key {
+  cursor: pointer;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid white;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.45);
+  transition: all 200ms ease;
+}
+
+.key:hover {
+  background-color: #fb2d8d;
+}
+
+kbd {
+  text-align: center;
+  font-size: 40px;
+}
+
+.key .sound {
+  text-align: center;
+  font-size: 18px;
+  color: #fada34;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #fada34;
+  box-shadow: 0 0 1rem #fada34;
+}
