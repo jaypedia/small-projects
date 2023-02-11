@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <title>My Canvas</title>
+    <script
+      src="https://kit.fontawesome.com/8d0a3fd827.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <canvas id="jsCanvas" class="canvas" width="700" height="700"></canvas>
+    <div class="controls">
+      <div class="controls__range">
+        <input
+          type="range"
+          id="jsRange"
+          min="1"
+          max="10"
+          value="5.5"
+          step="0.1"
+        />
+      </div>
+      <div class="controls__btns">
+        <button id="undo">Undo<i class="fas fa-undo"></i></button>
+        <button id="clear">Clear<i class="fas fa-hand-sparkles"></i></button>
+        <button id="jsMode">Fill<i class="fas fa-fill-drip"></i></i></button>
+        <button id="jsSave">Save<i class="fas fa-save"></i></button>
+      </div>
+      <div class="controls__colors" id="jsColors">
+        <div
+          class="controls__color jsColor"
+          style="background-color: rgb(0, 0, 0)"
+        ></div>
+        <div
+          class="controls__color jsColor"
+          style="background-color: rgb(255, 255, 255)"
+        ></div>
+        <div
+          class="controls__color jsColor"
+          style="background-color: rgb(255, 59, 48)"
+        ></div>
+        <div
+          class="controls__color jsColor"
+          style="background-color: rgb(255, 149, 0)"
+        ></div>
+        <div
+          class="controls__color jsColor"
+          style="background-color: rgb(255, 204, 0)"
+        ></div>
+        <div
+          class="controls__color jsColor"
+          style="background-color: rgb(76, 217, 100)"
+        ></div>
+        <div
+          class="controls__color jsColor"
+          style="background-color: rgb(111, 243, 188)"
+        ></div>
+        <div
+          class="controls__color jsColor"
+          style="background-color: rgb(90, 200, 250)"
+        ></div>
+        <div
+          class="controls__color jsColor"
+          style="background-color: rgb(33, 151, 172)"
+        ></div>
+        <div
+          class="controls__color jsColor"
+          style="background-color: rgb(0, 122, 255)"
+        ></div>
+        <div
+          class="controls__color jsColor"
+          style="background-color: rgb(88, 86, 214)"
+        ></div>
+        <div
+          class="controls__color jsColor"
+          style="background-color: rgb(243, 75, 146)"
+        ></div>
+        <div
+          class="controls__color jsColor"
+          style="background-color: rgb(250, 174, 161)"
+        ></div>
+      </div>
+    </div>
+  </body>
+</html>
