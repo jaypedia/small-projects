@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lobster Two', cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: midnightblue;
+  color: white;
+  height: 100vh;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  color: rgb(240, 20, 130);
+  font-size: 1.3rem;
+  background-color: white;
+  border-radius: 50%;
+  border: 3px solid rgb(240, 20, 130);
+}
+
+button:hover {
+  background-color: rgb(240, 20, 130);
+  color: white;
+}
+
+.game__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game__header .game__title {
+  margin: 0;
+  font-size: 3rem;
+  text-shadow: 5px 5px 0px rgb(240, 20, 130);
+}
+
+.game__header .game__subtitle {
+  font-size: 2rem;
+  text-shadow: 2px 3px 0px rgb(240, 20, 130);
+}
+
+.game__box .score-time {
+  display: flex;
+  justify-content: space-between;
+  width: 409px;
+  font-size: 1.3rem;
+}
+
+.game__box .grid {
+  background-color: whitesmoke;
+  display: flex;
+  flex-wrap: wrap;
+  height: 310px;
+  width: 409px;
+  gap: 3px;
+  border-radius: 10px;
+}
+
+.pop-up {
+  position: absolute;
+  top: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+}
+
+.pop-up .pop-up__message {
+  text-shadow: 2px 3px 0px rgb(240, 20, 130);
+  margin-bottom: 10px;
+}
+
+.hidden {
+  display: none;
+}

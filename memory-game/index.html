@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="shortcut icon" href="images/blank.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/8d0a3fd827.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="game__header">
+      <h1 class="game__title">🙄Memory Game😚</h1>
+      <h2 class="game__subtitle">Test your memory!</h2>
+      <button class="game__play"><i class="fas fa-play"></i></button>
+    </header>
+
+    <section class="game__box">
+      <div class="score-time">
+        <h3 class="game__score">Score : <span id="score">0</span></h3>
+        <h3 class="game__time">Time : <span id="time">00:00</span></h3>
+      </div>
+      <div class="grid"></div>
+    </section>
+
+    <section class="pop-up hidden">
+      <span class="pop-up__message">Replay?😆</span>
+      <button class="pop-up__replay"><i class="fas fa-redo"></i></button>
+    </section>
+  </body>
+</html>
