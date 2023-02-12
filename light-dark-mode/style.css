@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+body {
+  transition: 0.3s;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(244, 241, 241);
+  font-family: 'Poppins', sans-serif;
+  color: rgb(57, 57, 57);
+}
+
+h1 {
+  font-size: 70px;
+  line-height: 70px;
+  font-weight: 300;
+  margin: 10px 0; /* overridden the top and bottom margins*/
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 300;
+  margin: 50px 0 10px 0;
+}
+
+p {
+  margin: 0;
+  font-size: 20px;
+}
+
+a {
+  color: rgb(255, 0, 200);
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 200;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+}
+
+.dark a {
+  color: rgb(212, 124, 193);
+}
+
+.switch {
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgb(38, 38, 38);
+  position: relative;
+}
+
+.flicker {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  transition: 0.3s;
+  box-shadow: inset 4px 4px 4px rgb(255, 255, 255),
+    inset -4px -4px 4px rgb(195 193 198 / 90%);
+}
+
+.dark {
+  background-color: rgb(57, 57, 57);
+  transition: 0.3s;
+}
+
+.moon {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0px 0px rgb(241, 255, 42);
+  position: absolute;
+  top: 5px;
+  left: 45px;
+}
+
+.dark .flicker {
+  transform: translateX(40px);
+}
+
+/* All the child > * */
+.dark > * {
+  color: rgb(255, 255, 255);
+}
+
+.main {
+  height: 80vh;
+}
+
+.main-text {
+  width: 50%;
+  padding: 30px;
+}
+
+.square {
+  width: 98%;
+  margin: 1%;
+  height: 350px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.dark .square {
+  background-color: rgb(71, 71, 71);
+}
+
+#revenoo {
+  background-image: url('images/project1.png');
+  background-size: cover;
+}
+
+#burgerrator {
+  background-image: url('images/project2.png');
+  background-size: cover;
+}
+
+#news {
+  background-image: url('images/project3.png');
+  background-size: cover;
+}
+
+#dates {
+  background-image: url('images/project8.png');
+  background-size: cover;
+}
+
+.sub-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 100px 30px;
+  background-color: rgb(141, 140, 140);
+}
+
+.dark footer {
+  background-color: rgb(28, 28, 28);
+}
+
+/* For screens wider than 970px */
+@media only screen and (min-width: 970px) {
+  .square {
+    width: 48%;
+    margin: 1%;
+    height: 600px;
+  }
+}
