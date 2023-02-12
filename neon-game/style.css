@@ -1,0 +1,28 @@
+/* Global */
+
+/* Header */
+header #title {
+  font-size: 50px;
+}
+
+header #subtitle {
+  font-size: 25px;
+}
+
+/* Main */
+main #container {
+  display: grid;
+  height: 50vh;
+  width: 60vh;
+  grid-template-columns: repeat(4, 100px);
+  gap: 10px;
+  background-color: blue;
+}
+
+main #container .game {
+  background-color: yellow;
+  margin: 10px 10px;
+  font-size: 20px;
+}
+
+/* Footer */
