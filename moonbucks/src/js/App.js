@@ -1,4 +1,5 @@
 import { $ } from '../utils/dom.js';
+import { updateMenuCount } from '../utils/count.js';
 import { createMenuItem } from './components/menuItem.js';
 
 export const App = () => {
@@ -6,7 +7,6 @@ export const App = () => {
   const $menuInput = $('#espresso-menu-name');
   const $menuSubmitBtn = $('#espresso-menu-submit-button');
   const $menuList = $('#espresso-menu-list');
-  const $menuCount = $('.menu-count');
 
   const formHandler = (e) => {
     e.preventDefault();
@@ -14,8 +14,7 @@ export const App = () => {
     if (!menuInputValue) return;
     const menuItem = createMenuItem(menuInputValue);
     $menuList.appendChild(menuItem);
-    const menuCount = Number($menuCount.textContent.split(' ')[1]) + 1;
-    $menuCount.textContent = `total ${menuCount}`;
+    updateMenuCount('create');
     $menuInput.value = '';
   };
 
@@ -31,6 +30,7 @@ export const App = () => {
       const isConfirmed = confirm('Are you sure you want to remove the item?');
       if (isConfirmed) {
         target.closest('li').remove();
+        updateMenuCount('delete');
       }
       return;
     }
