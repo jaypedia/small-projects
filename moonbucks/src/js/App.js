@@ -1,22 +1,24 @@
+// @ts-check
+
 import { $ } from '../utils/dom.js';
 import { updateMenuCount } from '../utils/count.js';
 import { renderMenu } from './components/menuItem.js';
-import { getLocalStorageItem, setLocalStorageItem } from '../utils/localStorage.js';
+import {
+  getLocalStorageItem,
+  setLocalStorageItem,
+  getMenuFromStorage,
+  getSelectedMenuFromStorage,
+  setSelectedMenuToStorage,
+  getMenuByCategory,
+} from '../utils/localStorage.js';
 
 export function App() {
-  const initialMenuState = {
-    espresso: [],
-    frappuccino: [],
-    blended: [],
-    teavana: [],
-    desert: [],
-  };
-
-  this.menu = getLocalStorageItem('menu') || initialMenuState;
-  this.selectedMenu = 'espresso';
   this.init = () => {
-    setLocalStorageItem('menu', this.menu);
-    const categoryItems = this.menu.espresso;
+    const menu = getMenuFromStorage();
+    const INITIAL_MENU = 'espresso';
+    setLocalStorageItem('menu', menu);
+    setLocalStorageItem('selectedMenu', INITIAL_MENU);
+    const categoryItems = menu[INITIAL_MENU];
     renderMenu(categoryItems);
   };
 
@@ -30,12 +32,20 @@ export function App() {
   const addNewMenu = () => {
     const menuInputValue = $menuInput.value;
     if (!menuInputValue) return;
-    updateMenuCount('create');
+    // updateMenuCount('create');
     $menuInput.value = '';
-    this.menu[this.selectedMenu].push({ name: menuInputValue, isSoldOut: false });
-    setLocalStorageItem('menu', this.menu);
-    const categoryItem = this.menu[this.selectedMenu];
-    renderMenu(categoryItem);
+
+    // this.menu[this.selectedMenu]
+    const menu = getMenuFromStorage();
+    const selectedMenu = getSelectedMenuFromStorage();
+    // console.log(selectedMenu);
+    menu[selectedMenu].push({ name: menuInputValue, isSoldOut: false });
+
+    setLocalStorageItem('menu', menu);
+
+    const categoryItems = menu[selectedMenu];
+
+    renderMenu(categoryItems);
   };
 
   const updateMenu = (target) => {
@@ -53,6 +63,11 @@ export function App() {
     }
   };
 
+  const changeMenuToSoldOut = (target) => {
+    // TODO: LocalStorage 상태 변경
+    // 바뀐 상태로 재렌더링
+  };
+
   const formHandler = (e) => {
     e.preventDefault();
     addNewMenu();
@@ -67,16 +82,24 @@ export function App() {
       deleteMenu(target);
       return;
     }
+    if (target.classList.contains('menu-sold-out-button')) {
+      changeMenuToSoldOut(target);
+      return;
+    }
   };
 
   const navBarHandler = ({ target }) => {
-    const categoryKey = target.dataset.categoryName;
-    if (!categoryKey) return;
-    const categoryName = target.textContent;
-    $title.textContent = `${categoryName} menu management`;
-    this.selectedMenu = categoryKey;
-    const categoryItems = getLocalStorageItem('menu')[categoryKey];
-    renderMenu(categoryItems);
+    const changeTitle = () => {
+      const categoryName = target.textContent;
+      $title.textContent = `${categoryName} menu management`;
+    };
+
+    const selectedMenu = target.dataset.categoryName;
+    if (!selectedMenu) return;
+    changeTitle();
+    setSelectedMenuToStorage(selectedMenu); // 1. localstorage에 선택된 메뉴 저장
+    const categoryItems = getMenuByCategory(selectedMenu); // 2. localStorage에서 데이터 찾기
+    renderMenu(categoryItems); // 3. render
   };
 
   $form.addEventListener('submit', formHandler);
