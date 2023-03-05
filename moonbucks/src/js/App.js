@@ -21,7 +21,7 @@ export const App = () => {
 
   const menuItemHandler = ({ target }) => {
     if (target.classList.contains('menu-edit-button')) {
-      const $menuName = $('.menu-name');
+      const $menuName = target.closest('li').querySelector('.menu-name');
       const menuNameText = $menuName.textContent;
       const updatedMenuText = prompt('Enter the new menu name', menuNameText);
       $menuName.textContent = updatedMenuText;
