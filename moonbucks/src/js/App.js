@@ -25,6 +25,14 @@ export const App = () => {
       const menuNameText = $menuName.textContent;
       const updatedMenuText = prompt('Enter the new menu name', menuNameText);
       $menuName.textContent = updatedMenuText;
+      return;
+    }
+    if (target.classList.contains('menu-remove-button')) {
+      const isConfirmed = confirm('Are you sure you want to remove the item?');
+      if (isConfirmed) {
+        target.closest('li').remove();
+      }
+      return;
     }
   };
 
