@@ -4,7 +4,6 @@ import { $ } from '../utils/dom.js';
 import { updateMenuCount } from '../utils/count.js';
 import { renderMenu } from './components/menuItem.js';
 import {
-  getLocalStorageItem,
   setLocalStorageItem,
   getMenuFromStorage,
   getSelectedMenuFromStorage,
@@ -32,19 +31,12 @@ export function App() {
   const addNewMenu = () => {
     const menuInputValue = $menuInput.value;
     if (!menuInputValue) return;
-    // updateMenuCount('create');
     $menuInput.value = '';
-
-    // this.menu[this.selectedMenu]
     const menu = getMenuFromStorage();
     const selectedMenu = getSelectedMenuFromStorage();
-    // console.log(selectedMenu);
     menu[selectedMenu].push({ name: menuInputValue, isSoldOut: false });
-
     setLocalStorageItem('menu', menu);
-
     const categoryItems = menu[selectedMenu];
-
     renderMenu(categoryItems);
   };
 
@@ -64,8 +56,13 @@ export function App() {
   };
 
   const changeMenuToSoldOut = (target) => {
-    // TODO: LocalStorage 상태 변경
-    // 바뀐 상태로 재렌더링
+    const menu = getMenuFromStorage();
+    const selectedMenu = getSelectedMenuFromStorage();
+    const menuId = target.closest('li').dataset.menuId;
+    menu[selectedMenu][menuId].isSoldOut = !menu[selectedMenu][menuId].isSoldOut; // sold out 상태 토글링
+    setLocalStorageItem('menu', menu);
+    const categoryItems = menu[selectedMenu];
+    renderMenu(categoryItems);
   };
 
   const formHandler = (e) => {
