@@ -19,6 +19,16 @@ export const App = () => {
     $menuInput.value = '';
   };
 
+  const menuItemHandler = ({ target }) => {
+    if (target.classList.contains('menu-edit-button')) {
+      const $menuName = $('.menu-name');
+      const menuNameText = $menuName.textContent;
+      const updatedMenuText = prompt('Enter the new menu name', menuNameText);
+      $menuName.textContent = updatedMenuText;
+    }
+  };
+
   $form.addEventListener('submit', formHandler);
   $menuSubmitBtn.addEventListener('click', formHandler);
+  $menuList.addEventListener('click', menuItemHandler);
 };
