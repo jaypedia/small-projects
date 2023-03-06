@@ -1,0 +1,242 @@
+.hidden {
+  display: none;
+}
+
+/* Global */
+:root {
+  /* Font Size */
+  --font-micro: 16px;
+  --font-small: 18px;
+  --font-medium: 22px;
+  --font-regular: 40px;
+  --font-large: 130px;
+
+  /* Font Weight */
+  --weight-light: 300;
+  --weight-regular: 550;
+  --weight-semi-bold: 600;
+}
+
+/* Universal Tags */
+* {
+  font-family: monospace, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: rgb(0, 0, 0) 1px 0 5px;
+}
+
+/* Prevent dragging except quotes */
+#clock,
+#greeting,
+#login-form,
+#todo-form,
+#todo-list,
+#weather {
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+ul {
+  list-style: none;
+}
+
+#todo-list button {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: black;
+  font-size: var(--font-small);
+  margin: 0 10px;
+
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+
+#todo-list button:hover,
+#todo-list button:focus,
+#todo-list button:active,
+#background .bgbtn:hover {
+  background-color: rgb(102, 99, 99);
+  color: white;
+}
+
+input {
+  width: 330px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  font-size: var(--font-medium);
+  transition: background-color 0.5s ease-in-out;
+  color: white;
+  caret-color: transparent;
+}
+
+input:focus,
+input:active {
+  outline: none;
+  background-color: rgb(0, 0, 0);
+}
+
+input::placeholder {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+
+/* Date */
+#date {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  font-size: var(--font-medium);
+}
+
+/* Clock */
+#clock {
+  padding-top: 200px;
+  font-size: var(--font-large);
+  font-weight: var(--weight-regular);
+  cursor: default;
+  opacity: 0.9;
+}
+
+/* Background Image */
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  animation: fadeIn 0.5s linear;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Greetings */
+#greeting {
+  font-size: var(--font-regular);
+  cursor: default;
+}
+
+/* To Do List */
+#todo-form {
+  padding: 15px;
+}
+
+#todo-list {
+  font-size: var(--font-medium);
+  padding-left: 0px;
+  border: rgba(255, 255, 255, 0.5) solid;
+  border-radius: 10px;
+  border-width: thin;
+  width: 600px;
+  margin: 0px auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#todo-list li {
+  margin: 5px auto;
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Quote */
+#quote {
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+  font-size: var(--font-medium);
+  text-shadow: rgb(0, 0, 0) 1px 0 5px;
+  cursor: default;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+#quote:hover,
+#quote:focus,
+#quote:active {
+  -webkit-transform: scale(1.07);
+  transform: scale(1.07);
+}
+
+/* Weather */
+#weather {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  text-shadow: rgb(0, 0, 0) 1px 0 5px;
+  cursor: default;
+}
+
+#weather div:first-child {
+  font-size: var(--font-medium);
+}
+
+#background .bgbtn {
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  :root {
+    /* Font Size */
+    --font-micro: 8px;
+    --font-small: 14px;
+    --font-medium: 18px;
+    --font-regular: 26px;
+    --font-large: 85px;
+  }
+
+  input {
+    width: 270px;
+    height: 30px;
+  }
+
+  #todo-list {
+    width: 450px;
+  }
+}
